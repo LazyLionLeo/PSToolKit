@@ -254,3 +254,136 @@ section class=intro
 
 
 <br clear="right">
+
+As the class attribute is quite common, there's a shortcut for setting it:
+
+<img src="docs/14.png" align="right">
+
+```wiretext
+section.intro "Intro"
+section.intro.summary "Intro summary"
+```
+
+
+<br clear="right">
+
+When the tag name is left out, 'div' is assumed:
+
+<img src="docs/15.png" align="right">
+
+```wiretext
+.some_class "I'm a <DIV>"
+```
+
+
+<br clear="right">
+
+Multi-line strings are supported using """triple double quotes""":
+
+<img src="docs/16.png">
+
+```wiretext
+pre style="""
+  background-color: #222;
+  color: #fde;
+""" title="Shell script"
+	"""
+	  #!/bin/sh
+	  files=`ls ~ | wc -l`
+	  echo You have $files files in your home directory.
+	"""
+```
+
+
+<br clear="right">
+
+For styling, we recommend the use of CSS instead of 'style' attributes. WireText offers a convenient syntax for defining CSS inline:
+
+<img src="docs/17.png" align="right">
+
+```wiretext
+css
+	.special
+		background-color="#cce"
+		padding="8px"
+	.special > h3
+		color=red
+	.special li a
+		color=green
+section class=special
+	h3 id=my_title "Title text"
+	ul
+		li "Item one."
+		li a target=_blank href="https://example.com/two" "Item two."
+```
+
+
+<br clear="right">
+
+CSS selectors can be nested, and property=value pairs can optionally be put on the same line as the selector, allowing the above CSS to be written like this:
+
+```wiretext
+css .special background-color="#eee" padding="8px"
+	> h3 color=red
+	li a color=green
+```
+
+
+<br clear="right">
+
+WireText allows you to define reusable components. Component names must start with a Capital Letter.
+
+```wiretext
+define YourName
+	fieldset
+		legend "Who are you?"
+		input placeholder="First name"
+		input placeholder="Last name"
+```
+
+
+<br clear="right">
+
+To show a component, you can use its name as if it were an HTML tag:
+
+<img src="docs/20.png">
+
+```wiretext
+YourName
+.special
+	YourName
+```
+
+
+<br clear="right">
+
+Components can have parameters, defined between (parenthesis) after the tag name. They must be provided when instantiating the component the same way that HTML attributes are provided. They can be used in most contexts (including within strings) by surrounding their names with {curly brackets}.
+
+<img src="docs/21.png">
+
+```wiretext
+define AnyName(title, pronoun)
+	fieldset
+		legend {title}
+		input placeholder="{pronoun} first name"
+		input placeholder="{pronoun} last name"
+AnyName title="Who is the king of pop?" pronoun=His
+AnyName title="Who am I?" pronoun=My
+```
+
+
+<br clear="right">
+
+Parameters are required, unless they get a default value, provided by a '=' and the value after the definition.
+
+<img src="docs/22.png">
+
+```wiretext
+define AnyName(title = "Who are you?", pronoun = Your)
+	fieldset
+		legend {title}
+		input placeholder="{pronoun} first name"
+		input placeholder="{pronoun} last name"
+AnyName
+AnyName pronoun=Thy
+```
