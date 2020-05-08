@@ -387,3 +387,144 @@ define AnyName(title = "Who are you?", pronoun = Your)
 AnyName
 AnyName pronoun=Thy
 ```
+
+
+<br clear="right">
+
+Expression between {curly brackets} cannot just be parameter names, but are actually JavaScript expressions, in a context where all parameters have been defined as local variables
+
+<img src="docs/23.png">
+
+```wiretext
+define AnyName(title = "Who are you?", pronoun = Your)
+	fieldset
+		legend {title.toUpperCase()}
+		input placeholder="{pronoun.replace(/o/, '😁')} first name"
+		input placeholder="{pronoun} last name"
+AnyName
+```
+
+
+<br clear="right">
+
+Component attributes names must be valid JavaScript variable names. In case you want to use a JavaScript keyword, such as `class` or `in`m as an attribute, you can suffix it with and underscore in the definition and in your JavaScript expressions.
+
+<img src="docs/24.png" align="right">
+
+```wiretext
+define InClass(class_, in_)
+	input value={in_} class={class_}
+InClass in=test class=intro
+```
+
+
+<br clear="right">
+
+WireText supports the spread operator, to receive all attributes that have not been defined as parameters into an object. This object can be passed expanded to attributes for a DOM element or another component.
+
+<img src="docs/25.png" align="right">
+
+```wiretext
+define SpreadComponent(a, b, ...rest)
+	p "a = {a}"
+	p "b = {b}"
+	p "rest has {Object.keys(rest).length} properties"
+	input ...rest
+SpreadComponent a=Almond b=Banana style="color: red;" value="My input value" type=password
+```
+
+
+<br clear="right">
+
+WireText offers if/else if/else blocks, where the condition is provided by a JavaScript expression. Also note how the '?' suffix in the parameter list can be used for optional parameters (defaulting to an empty string).
+
+<img src="docs/26.png">
+
+```wiretext
+define AnyName(title = "Who are you?", checkbox?)
+	fieldset
+		legend {title}
+		input placeholder="First name"
+		input placeholder="Last name"
+		if {checkbox}
+			label
+				input type=checkbox
+				{checkbox}
+AnyName
+AnyName checkbox="I agree!"
+```
+
+
+<br clear="right">
+
+Similarly, there are for blocks.
+
+<img src="docs/27.png">
+
+```wiretext
+for person in {"he she Frank".split(" ")}
+	AnyName title="Who is {person}?"
+```
+
+
+<br clear="right">
+
+JavaScript can also be used in event handlers, allowing you to hack a little bit of interactivity into your wireframes. NOTE: Expect this feature to change at any time. I'm not really happy with it yet.
+
+<img src="docs/28.png" align="right">
+
+```wiretext
+button onclick={e => e.target.innerText += "!"} "Hello"
+```
+
+
+<br clear="right">
+
+You may also run a bit of JavaScript while your page is initially constructed using a run statement. Its `this` variable will refer to the parent DOM element. NOTE: Expect this feature to change at any time. I'm not really happy with it yet.
+
+<img src="docs/29.png" align="right">
+
+```wiretext
+css .angry color=red text-transform=uppercase font-weight=bold
+section
+	"Test"
+	run {setInterval(() => this.classList.toggle('angry'), 500)}
+```
+
+
+<br clear="right">
+
+(Multi-line) JavaScript containing {curly brackets} can be wrapped in {{{triple curly brackets}}}. While in {regular form} only a single JavaScript expression is expected, which will be used as a value by WireText, {{{triple form}}} doesn't deliver a value by default, but you can `return` one if you want.
+
+<img src="docs/30.png" align="right">
+
+```wiretext
+section
+	"Test"
+	run {{{
+		let element = this;
+		function toggleAngry() {
+			element.classList.toggle('angry');
+		}
+		setInterval(toggleAngry, 500);
+	}}}
+```
+
+
+<br clear="right">
+
+Components can also receive a block of WireText as a parameter. The default block (which resembles the content of a DOM element) is called 'content'.
+
+<img src="docs/31.png" align="right">
+
+```wiretext
+define FancyFrame(content)
+	div style="border: 4px solid #c0c;"
+		div style="border: 4px solid #0cc;"
+			div style="border: 4px solid #cc0; padding: 4px;"
+				{content}
+FancyFrame
+	"Type something: "
+	input
+FancyFrame "test"
+```
