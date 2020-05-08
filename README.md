@@ -528,3 +528,64 @@ FancyFrame
 	input
 FancyFrame "test"
 ```
+
+
+<br clear="right">
+
+You can also pass multiple blocks as parameters, or pass a block to a parameter not named 'content' using this form:
+
+<img src="docs/32.png" align="right">
+
+```wiretext
+css header display=flex background-color="#ccc" align-items=center
+	> h3 flex=1 text-align=center
+define TitleBar(title, left, right)
+	header
+		.left {left}
+		h3 {title}
+		.right {right}
+TitleBar title="Hello world!"
+	left=
+		a href="#" "Go back"
+	right=
+		input type=checkbox
+		"Dark mode"
+FancyFrame
+	content = select
+		option "moon"
+		option "mars"
+```
+
+
+<br clear="right">
+
+WireText allows you to include files. The path should be given as a string and relative to the path of the current file.
+
+<img src="docs/33.png" align="right">
+
+```wiretext
+include "language-tutorial-include.wt"
+IncludeHello
+```
+
+
+<br clear="right">
+
+WireText standard libraries (currently only `components-v1`) can be included by giving the name as an identifier:
+
+<img src="docs/34.png" align="right">
+
+```wiretext
+include components-v1
+Phone id=test title="My app" up=home
+	content=
+		Input label=Name
+		CheckBox label="Sure!"
+	bar_right=
+		 RemixIcon icon=settings
+```
+
+
+<br clear="right">
+
+
