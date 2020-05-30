@@ -45,4 +45,11 @@ async function update(wiretext, path) {
             lastRunner = runner;
             console.log(`Update in ${new Date() - startTime}ms`);
 
-            vscode.postMessage
+            vscode.postMessage({command: 'ok'});
+        }
+
+    } catch(error) {
+        if (context.cancelled) {
+            console.log('Update cancelled')
+        }
+  
