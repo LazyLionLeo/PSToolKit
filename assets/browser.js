@@ -25,3 +25,7 @@ window.addEventListener('message', function({data}) {
 });
 
 async function update(wiretext, path) {
+    fileCache[path] = wiretext;
+    if (lastContext) lastContext.cancelled = true;
+    let context = lastContext = {};
+    let startTim
