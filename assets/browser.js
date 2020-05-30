@@ -17,4 +17,11 @@ window.addEventListener('message', function({data}) {
         update(data.text, data.path);
     }
     else if (data.command === 'scrollTo') {
-        if (lastRunner) lastRunner.scrollTo(data.line, dat
+        if (lastRunner) lastRunner.scrollTo(data.line, data.column)
+    }
+    else {
+        throw new Error("Invalid command: "+data.command);
+    }
+});
+
+async function update(wiretext, path) {
