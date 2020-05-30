@@ -28,4 +28,10 @@ async function update(wiretext, path) {
     fileCache[path] = wiretext;
     if (lastContext) lastContext.cancelled = true;
     let context = lastContext = {};
-    let startTim
+    let startTime = +new Date();
+
+    try {
+        errorE.innerHTML = "";
+
+        let previewE = document.createElement("div");
+        previewE.class
