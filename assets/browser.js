@@ -39,3 +39,6 @@ async function update(wiretext, path) {
         let runner = await textToDom(wiretext, previewE, context, path);
 
         if (!context.cancelled) {
+            if (lastPreviewE) lastPreviewE.remove();
+            document.body.append(previewE);
+            lastPreviewE = previe
