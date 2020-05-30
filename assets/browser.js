@@ -34,4 +34,8 @@ async function update(wiretext, path) {
         errorE.innerHTML = "";
 
         let previewE = document.createElement("div");
-        previewE.class
+        previewE.className = "screens";
+        
+        let runner = await textToDom(wiretext, previewE, context, path);
+
+        if (!context.cancelled) {
