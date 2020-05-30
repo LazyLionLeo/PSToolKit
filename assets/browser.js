@@ -41,4 +41,8 @@ async function update(wiretext, path) {
         if (!context.cancelled) {
             if (lastPreviewE) lastPreviewE.remove();
             document.body.append(previewE);
-            lastPreviewE = previe
+            lastPreviewE = previewE;
+            lastRunner = runner;
+            console.log(`Update in ${new Date() - startTime}ms`);
+
+            vscode.postMessage
