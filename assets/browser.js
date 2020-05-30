@@ -52,4 +52,7 @@ async function update(wiretext, path) {
         if (context.cancelled) {
             console.log('Update cancelled')
         }
-  
+        else if (error instanceof ParseError) {
+            console.log(`Error in ${new Date() - startTime}ms`);
+
+            vscode.postMessage({
