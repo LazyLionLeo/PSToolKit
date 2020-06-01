@@ -56,3 +56,9 @@ async function update(wiretext, path) {
             console.log(`Error in ${new Date() - startTime}ms`);
 
             vscode.postMessage({
+                command: 'error',
+                text: error.message,
+                trace: error.trace
+            });
+
+            errorE.innerText = error
