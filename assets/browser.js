@@ -61,4 +61,9 @@ async function update(wiretext, path) {
                 trace: error.trace
             });
 
-            errorE.innerText = error
+            errorE.innerText = error.toString();
+
+        } else {
+            errorE.innerText = "Sorry, we hit a WireText bug!\n" + error.toString();
+            throw error;
+      
