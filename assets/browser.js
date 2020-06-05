@@ -66,4 +66,6 @@ async function update(wiretext, path) {
         } else {
             errorE.innerText = "Sorry, we hit a WireText bug!\n" + error.toString();
             throw error;
-      
+        }
+    }
+}
