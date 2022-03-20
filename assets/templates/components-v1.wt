@@ -1,0 +1,130 @@
+
+# Text styling
+
+css
+	"@font-face"
+		font-family=pen
+		src="url('blokletters/balpen.ttf')"
+
+	.wt-note
+		padding="1em"
+		flex=1
+		min-width="250px"
+		p
+			margin="0.5em"
+		> div
+			> p:first-child
+				margin-top=0
+			> p:last-child
+				margin-bottom=0
+		ul, ol
+			display=flex
+			flex-direction=column
+			padding-inline-start="20px"
+		
+
+	.wt-screen
+		display=flex
+		flex-wrap=wrap
+	
+	.wt-header
+		margin="0"
+		display="flex"
+		gap="4px"
+		padding="4px"
+		font-weight="bold"
+		z-index="2"
+		border-width="0 0 2px 0 !important"
+
+		> .wt-title
+			margin="0"
+			flex="1"
+
+	.wt-title
+		font-size="125%"
+		font-weight="bold"
+
+	a, a:visited, a:focus, a:active
+		color="#44a"
+		text-decoration="none"
+
+	img
+		max-width="100%"
+
+	*
+		box-sizing=border-box
+
+	.wt-device *
+		font-family=pen
+		
+
+
+
+### Menu
+
+css .wt-menu-bar
+	display="flex"
+	gap="8px"
+	padding="4px 8px"
+	margin="-8px -8px 0 -8px"
+	border-bottom="2px solid black"
+	color="#22c"
+
+	> .wt-category
+		position="relative"
+
+	> .wt-category > .wt-options
+		color=black
+		display="none"
+		position="absolute"
+		padding="4px"
+		flex-direction="column"
+		gap="4px"
+		border="2px solid black"
+		background-color=white
+		box-shadow="0 2px 4px rgba(0,0,0,0.3)"
+
+	> .wt-category:hover > .wt-options
+		display="flex"
+
+define MenuBar(content)
+	.wt-menu-bar
+		run {setHandDrawnBorders(this)}
+		{content}
+		
+define MenuCategory(category,content?)
+	.wt-category
+		.wt-title {category}
+		.wt-options
+			run {setHandDrawnBorders(this)}
+			if {content}
+				{content}
+			else
+				.wt-empty-page "Not designed yet.."
+
+
+
+### Buttons
+
+css
+	a, a:active, a:focus, a:visited, a:hover
+		color="#22c"
+	
+	.no-target
+		color="black !important"
+
+	.wt-button
+		padding="4px"
+		display="flex"
+		gap="4px"
+		border-radius="4px"
+		font-weight="bold"
+		justify-content="center"
+		align-items="center"
+
+		> div
+			flex="1"
+			text-align="center"
+
+	".wt-button:not(.no-target)"
+		border-color="#22c !important"
