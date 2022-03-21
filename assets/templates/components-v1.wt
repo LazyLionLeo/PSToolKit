@@ -385,3 +385,143 @@ define Input(label,type="text",value?)
 define TextArea(label,value?)
 	label.wt.textarea
 		if {label}
+			p {label}
+		textarea.wt
+			run {setHandDrawnBorders(this)}
+			{value}
+
+
+define CheckBox(label,checked?,name?)
+	label.wt.checkbox
+		input.wt type=checkbox checked={!!checked}
+			run {setHandDrawnBorders(this)}
+		p {label}
+
+
+define RadioButton(name,label,checked?)
+	label.wt.radio
+		input.wt type=radio name={name} checked={!!checked}
+		p {label}
+
+
+define Select(label, content?, options?, sep="|")
+	label.wt.select
+		p {label}
+		select.wt
+			run {setHandDrawnBorders(this)}
+			if {content}
+				{content}
+			if {options}
+				for option in {options.split(sep)}
+					option
+						{option.trim()}
+
+define FieldSet(content, legend?)
+	fieldset.wt
+		if {legend}
+			legend.wt {legend}
+		{content}
+
+
+
+### Lists
+
+css ul.wt
+	flex="1"
+	display="flex"
+	flex-direction="column"
+	gap="4px"
+	padding="0"
+	margin="0"
+
+	> li
+		display="flex"
+		gap="4px"
+		align-items="flex-start"
+
+		> div
+			display="flex"
+			flex-direction="column"
+			gap="2px"
+
+			> p
+				margin="0"
+				font-size="85%"
+
+			> p:first-child
+				font-weight="bold"
+				font-size="100%"
+
+	> li + li
+		border-top="1px solid #ccc"
+		padding-top="2px"
+		margin-top="-2px"
+
+define List(content)
+	ul.wt {content}
+
+define ListItem(text,subtext?,thumbnail?,link?,thumbnail_size=32)
+	li
+		if {thumbnail}
+			Thumbnail src={thumbnail} size={thumbnail_size}
+		div
+			p
+				if {link}
+					a href={"#screen_" + link} {text}
+				else
+					{text}
+			if {subtext}
+				p.subtext {subtext}
+
+
+
+### Phone
+
+css .wt-phone
+	background-color="white"
+	width="320px"
+	min-width="320px"
+	height="600px"
+	box-shadow="0 4px 8px rgba(0,0,0,0.5)"
+	border-radius="8px"
+	display="flex"
+	flex-direction="column"
+	position="relative"
+
+	> .wt-panel
+		position="absolute"
+		top="64px"
+		left=0
+		bottom=0
+		padding="8px"
+		background-color=white
+		font-weight="bold"
+		min-width="35%"
+		z-index="1"
+		display="flex"
+		flex-direction="column"
+		gap="8px"
+		opacity="1"
+		transition="left 0.5s, opacity 0.5s"
+		box-shadow="5px 0 20px black"
+
+	> .wt-panel.hidden
+		left="-35%"
+		opacity="0"
+
+
+define Phone(id, content, title?, bar_left?, bar_right?, up?, panel?, notes?)
+	run {setRandomSeed(id)}
+	.wt-screen
+		HandDrawnBox class="wt-phone wt-device thick" id="screen_{id}"
+			if {panel}
+				.wt-panel.hidden
+					run {setHandDrawnBorders(this)}
+					{panel}
+			if {title || bar_left || bar_right}
+				HandDrawnBox class=wt-header
+					.wt-left
+						if {up}
+							Icon link={up} icon="chevron-left"
+						if {panel}
+							a.wt-icon onclick={{{
