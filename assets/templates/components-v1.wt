@@ -238,3 +238,150 @@ run {{{
 			seed = 0 | (((seed << 5) - seed) + str.charCodeAt(i));
 		}
 	};
+
+    function randomInt(options) {
+      var t = seed += 0x6D2B79F5;
+      t = Math.imul(t ^ t >>> 15, t | 1);
+      t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+      return ((t ^ t >>> 14) >>> 0) % options;
+	}
+
+	window.setHandDrawnBorders = function(element) {
+		let style = '';
+		let alt = randomInt(2);
+		for(let corner of ['top-left', 'top-right', 'bottom-right', 'bottom-left']) {
+			let bend = 3 + randomInt(5);
+			let length = 33 + randomInt(68);
+			if (++alt & 1) {
+				style += `border-${corner}-radius: ${bend}px 50%;`;
+			}
+			else {
+				style += `border-${corner}-radius: 50% ${bend}px;`;
+			}
+		}
+		element.style = style;
+	}
+}}}
+
+define HandDrawnBox(content, class_?, ...rest)
+	div class="wt-hd{class_ ? ' '+class_ : ''}" ...{rest}
+		run {setHandDrawnBorders(this)}
+		{content}
+
+css
+	.wt-hd
+		border="solid 2px #41403E"
+
+	.wt-hd.thick
+		border="solid 3px #41403E"
+
+	.wt-hd.dashed
+		border="dashed 2px #41403E"
+
+
+### Tabs
+
+css .wt-tabs
+	display="flex"
+	gap="8px"
+	> .wt-tab
+		border-radius="8px"
+		padding="4px"
+		display="flex"
+		gap="4"
+		cursor="pointer"
+
+		> .wt-template
+			display="none"
+
+	"> .wt-tab.selected"
+		font-weight=bold
+		border-style=solid
+	"> .wt-tab:not(.selected)"
+		border-color="#22c !important"
+		color="#22c"
+
+
+
+
+define Tabs(content, position="top")
+	if {position == "bottom"}
+		.wt-scrollable.bottom
+	.wt-tabs
+		{content}
+	if {position != "bottom"}
+		.wt-scrollable.top
+	
+	run {{{
+		let tabE = this.querySelector(':scope > .wt-tabs > .wt-tab.selected');
+		if (tabE) {
+			this.querySelector(':scope > .wt-scrollable').innerHTML = tabE.querySelector(':scope > .wt-template').innerHTML;
+		}
+	}}}
+
+
+define Tab(content={undefined},title,selected={false})
+	HandDrawnBox class="wt-tab dashed {selected ? ' selected' : ''}" onclick={{{
+		return function(event) {
+			let tabsE = this.parentNode.parentNode;
+			tabsE.querySelector(':scope > .wt-scrollable').innerHTML = this.querySelector(':scope > .wt-template').innerHTML;
+			for (let tabE of tabsE.querySelector(':scope > .wt-tabs').children) {
+				tabE.classList.remove('selected');
+			}
+			this.classList.add('selected');
+		}
+	}}}
+		{title}
+		.wt-template
+			if {content===undefined}
+				.wt-empty-page "Not designed yet.."
+			else
+				{content}
+
+
+
+### Forms
+
+css
+	label.wt
+		display="flex"
+		flex-direction="column"
+		gap="4px"
+
+	label.wt.checkbox, label.wt.radio
+		flex-direction="row"
+
+	label.wt > p
+		margin="0"
+		font-weight="bold"
+		font-size="85%"
+		margin-bottom="2px"
+
+	label.wt.checkbox > p, label.wt.radio > p
+		flex="1"
+
+	input.wt, textarea.wt, select.wt
+		padding="4px"
+		margin="0"
+		resize="none"
+		outline="none"
+		background-color=transparent
+		accent-color="#444"
+
+
+	fieldset.wt
+		margin="0"
+		padding="8px"
+		border="1px solid #ccc"
+
+define Input(label,type="text",value?)
+	label.wt class={type}
+		if {label}
+			p {label}
+		input.wt value={value} type={type}
+			run {setHandDrawnBorders(this)}
+		
+		
+define TextArea(label,value?)
+	label.wt.textarea
+		if {label}
