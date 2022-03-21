@@ -128,3 +128,113 @@ css
 
 	".wt-button:not(.no-target)"
 		border-color="#22c !important"
+
+	.wt-action-button
+		position="absolute"
+		right="12px"
+		bottom="12px"
+		padding="12px"
+		border="2px solid #22c"
+		color="#22c"
+		font-weight="bold"
+		border-radius="50% 60% 40% 55%"
+		display="flex"
+		justify-content="center"
+		align-items="center"
+		box-shadow="0 4px 8px rgba(0,0,0,0.5)"
+
+define Button(icon?,link?,content?)
+	a href={link ? "#screen_"+link : "javascript:void(0)"} class="wt-hd dashed wt-button{link ? '' : ' no-target'}"
+		run {setHandDrawnBorders(this)}
+		if {icon}
+			RemixIcon icon={icon} size=16
+		{content}
+
+define ActionButton(link,content)
+	a.wt-action-button href={"#screen_" + link}
+		{content} # test
+
+
+
+### Icons
+
+css
+	.wt-remix
+		font-size="150%"
+
+	.wt-icon
+		cursor="pointer"
+
+	.wt-thumbnail
+		background-color="#666"
+		color="white"
+		border-radius="4px"
+
+# We're loading this font from the web as opposed to from our assets, as it
+# seems impossible to have the browser cache an asset.
+link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"
+
+define RemixIcon(icon,size?,extraClass?)
+	i class="ri-{icon}-line wt-remix" style={size ? "width: "+size+"px; height: "+size+"px; font-size: "+size+"px;" : ""}
+
+define Icon(icon,link)
+	a.wt-icon href={"#screen_" + link}
+		RemixIcon icon={icon}
+
+define Thumbnail(src,size=32)
+	if {src.indexOf('/')>=0 || src.indexOf('.')>=0}
+		.wt-thumbnail style="background: center / cover url({src}); width: {size}px; height: {size}px;"
+	else
+		RemixIcon icon={src} size={size} extraClass=thumbnail
+
+
+
+### Layouting
+
+css
+	.wt-empty-page
+		flex="1"
+		display="flex"
+		justify-content="center"
+		align-items="center"
+		font-style="italic"
+
+	.wt-scrollable
+		display="flex"
+		flex-direction="column"
+		gap="8px"
+		padding="8px"
+		flex="1"
+		overflow="auto"
+
+		.wt-scrollable
+			padding="0"
+			overflow="visible"
+
+		> hr
+			margin="0"
+			border-top="1px solid #ccc"
+
+	.wt-scrollable.bottom
+		justify-content="end"
+
+	.wt-columns
+		display="flex"
+		gap="8px"
+
+		> *
+			flex="1"
+
+
+
+### Hand-drawn box
+
+run {{{
+	// Deterministic randomness.
+	let seed = 6;
+	window.setRandomSeed = function(str) {
+		seed = 0;
+		for (i = 0; i < str.length; i++) {
+			seed = 0 | (((seed << 5) - seed) + str.charCodeAt(i));
+		}
+	};
