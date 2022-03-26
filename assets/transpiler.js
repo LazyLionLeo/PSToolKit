@@ -15,4 +15,9 @@ const TOKENIZE_REGEXP = new RegExp(String.raw`
 |
 (?<number>-?\s*[0-9]+)
 |
-(?<operator>[*/=<>!%^&|+
+(?<operator>[*/=<>!%^&|+]+)
+|
+(?<char>.)
+`.replace(/\n/g, ""), 'g');
+
+const JS_KEYWORDS = new Set("break case catch class const continue debugger default delete do 
