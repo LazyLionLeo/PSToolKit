@@ -30,4 +30,10 @@ const STR_REPLACEMENTS = {
 };
 
 
-export class ParseError exte
+export class ParseError extends Error {
+    constructor(token, message) {
+        super(message);
+        this.trace = [token.range];
+    }
+    addCaller(token) {
+   
