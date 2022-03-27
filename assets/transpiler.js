@@ -36,4 +36,8 @@ export class ParseError extends Error {
         this.trace = [token.range];
     }
     addCaller(token) {
-   
+        this.trace.push(token.range);
+    }
+    toString() {
+        let message = this.message;
+        for(let range of this.trac
