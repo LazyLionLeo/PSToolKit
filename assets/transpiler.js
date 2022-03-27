@@ -20,4 +20,14 @@ const TOKENIZE_REGEXP = new RegExp(String.raw`
 (?<char>.)
 `.replace(/\n/g, ""), 'g');
 
-const JS_KEYWORDS = new Set("break case catch class const continue debugger default delete do else enum export extends false finally for function if import in instanceof new null return super switch this throw true try typeof var void
+const JS_KEYWORDS = new Set("break case catch class const continue debugger default delete do else enum export extends false finally for function if import in instanceof new null return super switch this throw true try typeof var void while with yield".split(" "));
+
+const STR_REPLACEMENTS = {
+    "n": "\n",
+    "r": "\r",
+    "t": "\t",
+    "{": "{"
+};
+
+
+export class ParseError exte
