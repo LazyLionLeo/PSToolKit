@@ -56,4 +56,8 @@ export class ParseCancelled extends Error {
 
 class Range {
     constructor(url, line, column) {
-     
+        this.url = url;
+        this.startLine = this.endLine = line;
+        this.startColumn = this.endColumn = column;
+    }
+    setEnd(endLine, endCo
