@@ -40,4 +40,12 @@ export class ParseError extends Error {
     }
     toString() {
         let message = this.message;
-        for(let range of this.trac
+        for(let range of this.trace) {
+            message += `\nat ${range}`;
+        }
+        return message;
+    }
+}
+
+
+export class ParseCancelled extends Erro
