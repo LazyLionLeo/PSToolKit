@@ -48,4 +48,12 @@ export class ParseError extends Error {
 }
 
 
-export class ParseCancelled extends Erro
+export class ParseCancelled extends Error {
+    // Thrown when the parsing should be interrupted (because there is
+    // new data).
+}
+
+
+class Range {
+    constructor(url, line, column) {
+     
