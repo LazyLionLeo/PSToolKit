@@ -60,4 +60,9 @@ class Range {
         this.startLine = this.endLine = line;
         this.startColumn = this.endColumn = column;
     }
-    setEnd(endLine, endCo
+    setEnd(endLine, endColumn) {
+        this.endLine = endLine;
+        this.endColumn = endColumn;
+    }
+    toString() {
+        let file = this.url.spli
