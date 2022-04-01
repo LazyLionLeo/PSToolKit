@@ -65,4 +65,11 @@ class Range {
         this.endColumn = endColumn;
     }
     toString() {
-        let file = this.url.spli
+        let file = this.url.split('/').pop();
+        return `${file}:${this.startLine+1}:${this.startColumn+1}`;
+    }
+}
+
+
+class Captured {
+    constructor
