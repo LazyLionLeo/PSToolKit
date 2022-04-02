@@ -72,4 +72,6 @@ class Range {
 
 
 class Captured {
-    constructor
+    constructor(tokens, currentUrl, runMethod, start, end, vars) {
+        this.tokens = tokens;
+        this.currentUrl = currentUrl;
