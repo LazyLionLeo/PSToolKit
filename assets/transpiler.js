@@ -75,3 +75,9 @@ class Captured {
     constructor(tokens, currentUrl, runMethod, start, end, vars) {
         this.tokens = tokens;
         this.currentUrl = currentUrl;
+        this.runMethod = runMethod;
+        this.start = start;
+        this.end = end;
+        this.vars = vars;
+    }
+    async run(pare
