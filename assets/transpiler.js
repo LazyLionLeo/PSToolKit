@@ -80,4 +80,5 @@ class Captured {
         this.end = end;
         this.vars = vars;
     }
-    async run(pare
+    async run(parent, context, args=undefined, callerToken=undefined) {
+        let runner = new Runner(this.tokens, parent, context, this.currentUrl, this.sta
