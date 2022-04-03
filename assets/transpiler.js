@@ -92,4 +92,5 @@ class Captured {
             }
             throw e;
         }
-        if (run
+        if (runner.tokenIndex != this.end) {
+            throw new Error(`Inconsistent capture tokenIndex=${runner.tokenIndex} start=${this.start} e
