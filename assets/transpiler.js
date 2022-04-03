@@ -87,4 +87,9 @@ class Captured {
             await runner[this.runMethod]();
         }
         catch(e) {
-            i
+            if (e instanceof ParseError && callerToken) {
+                e.addCaller(callerToken);
+            }
+            throw e;
+        }
+        if (run
