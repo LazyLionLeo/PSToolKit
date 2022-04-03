@@ -93,4 +93,9 @@ class Captured {
             throw e;
         }
         if (runner.tokenIndex != this.end) {
-            throw new Error(`Inconsistent capture tokenIndex=${runner.tokenIndex} start=${this.start} e
+            throw new Error(`Inconsistent capture tokenIndex=${runner.tokenIndex} start=${this.start} end=${this.end}`)
+        }
+        return runner;
+    }
+    toString() {
+        throw new ParseError(this.tokens[this.start], "Captured block
