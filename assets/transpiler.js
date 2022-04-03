@@ -98,4 +98,12 @@ class Captured {
         return runner;
     }
     toString() {
-        throw new ParseError(this.tokens[this.start], "Captured block
+        throw new ParseError(this.tokens[this.start], "Captured block cannot be used as a string")
+    }
+}
+
+
+function tokenize(wiretext, url) {
+    let tokens = [];
+    let line = 0, column = 0;
+   
