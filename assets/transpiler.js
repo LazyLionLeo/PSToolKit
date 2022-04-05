@@ -106,4 +106,6 @@ class Captured {
 function tokenize(wiretext, url) {
     let tokens = [];
     let line = 0, column = 0;
-   
+    for (let match of wiretext.matchAll(TOKENIZE_REGEXP)) {
+        // Keep track of current position in file
+        let text = match[0
