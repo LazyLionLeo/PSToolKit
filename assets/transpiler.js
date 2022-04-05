@@ -108,4 +108,8 @@ function tokenize(wiretext, url) {
     let line = 0, column = 0;
     for (let match of wiretext.matchAll(TOKENIZE_REGEXP)) {
         // Keep track of current position in file
-        let text = match[0
+        let text = match[0];
+        let lastNewline = text.lastIndexOf('\n');
+        let range = new Range(url, line, column);
+        if (lastNewline >= 0) {
+            line 
