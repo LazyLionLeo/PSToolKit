@@ -121,4 +121,8 @@ function tokenize(wiretext, url) {
          
         for(let k in match.groups) {
             if (match.groups[k] !== undefined) {
-                tokens.push
+                tokens.push({type: k, text: match.groups[k], range});
+            }
+        }
+    }
+    let range = {startLine: line, startColumn: column, endLine: li
