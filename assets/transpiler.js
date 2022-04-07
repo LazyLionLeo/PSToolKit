@@ -117,4 +117,8 @@ function tokenize(wiretext, url) {
         } else {
             column += text.length;
         }
-   
+        range.setEnd(line, column);
+         
+        for(let k in match.groups) {
+            if (match.groups[k] !== undefined) {
+                tokens.push
