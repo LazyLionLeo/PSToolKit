@@ -112,4 +112,9 @@ function tokenize(wiretext, url) {
         let lastNewline = text.lastIndexOf('\n');
         let range = new Range(url, line, column);
         if (lastNewline >= 0) {
-            line 
+            line += text.split('\n').length - 1;
+            column = text.length - lastNewline - 1;
+        } else {
+            column += text.length;
+        }
+   
