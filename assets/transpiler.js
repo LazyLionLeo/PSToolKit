@@ -129,4 +129,12 @@ function tokenize(wiretext, url) {
     tokens.push({type: 'eof', text: '', range});
 
     tokens = indentsToBlocks(tokens);
-    //for(let token 
+    //for(let token of tokens) console.log(token);
+
+    return tokens;
+}
+
+
+function indentsToBlocks(inTokens) {
+    let outTokens = [];
+    let indents 
