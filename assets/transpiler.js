@@ -125,4 +125,8 @@ function tokenize(wiretext, url) {
             }
         }
     }
-    let range = {startLine: line, startColumn: column, endLine: li
+    let range = {startLine: line, startColumn: column, endLine: line, endColumn: column, url: url};
+    tokens.push({type: 'eof', text: '', range});
+
+    tokens = indentsToBlocks(tokens);
+    //for(let token 
