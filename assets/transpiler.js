@@ -137,4 +137,8 @@ function tokenize(wiretext, url) {
 
 function indentsToBlocks(inTokens) {
     let outTokens = [];
-    let indents 
+    let indents = [];
+    for (let token of inTokens) {
+        if (token.type === 'comment') continue;
+        
+        if (token.type === 'line' || token.ty
