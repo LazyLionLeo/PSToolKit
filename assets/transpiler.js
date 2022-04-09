@@ -152,4 +152,8 @@ function indentsToBlocks(inTokens) {
                 } else if (!text.startsWith(indent)) {
                     throw new ParseError(token, `Indent mismatch ${JSON.stringify(indent)} != ${JSON.stringify(text)}`)
                 } else {
-                    text = te
+                    text = text.substr(indent.length);
+                }
+            }
+            for(let pop=0; pop<pops; pop++) indents.pop();
+  
