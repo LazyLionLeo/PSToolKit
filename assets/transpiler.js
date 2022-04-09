@@ -147,4 +147,7 @@ function indentsToBlocks(inTokens) {
             let pops = 0;
             for (let indent of indents) {
                 if (text==='') {
-                    outTokens.push({type: 'dedent', r
+                    outTokens.push({type: 'dedent', range: token.range});
+                    pops += 1;
+                } else if (!text.startsWith(indent)) {
+                    throw n
