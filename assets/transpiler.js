@@ -144,4 +144,7 @@ function indentsToBlocks(inTokens) {
         if (token.type === 'line' || token.type === 'eof') {
             outTokens.push({type: 'eol', range: token.range});
             let text = token.text;
-            let pops 
+            let pops = 0;
+            for (let indent of indents) {
+                if (text==='') {
+                    outTokens.push({type: 'dedent', r
