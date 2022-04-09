@@ -150,4 +150,6 @@ function indentsToBlocks(inTokens) {
                     outTokens.push({type: 'dedent', range: token.range});
                     pops += 1;
                 } else if (!text.startsWith(indent)) {
-                    throw n
+                    throw new ParseError(token, `Indent mismatch ${JSON.stringify(indent)} != ${JSON.stringify(text)}`)
+                } else {
+                    text = te
