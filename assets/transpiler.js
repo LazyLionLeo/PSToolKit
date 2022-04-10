@@ -156,4 +156,8 @@ function indentsToBlocks(inTokens) {
                 }
             }
             for(let pop=0; pop<pops; pop++) indents.pop();
-  
+            if (text !== '') {
+                indents.push(text);
+                outTokens.push({type: 'indent', range: token.range});
+            }
+       
