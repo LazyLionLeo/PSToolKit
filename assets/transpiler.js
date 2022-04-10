@@ -169,4 +169,9 @@ function indentsToBlocks(inTokens) {
 }
 
 
-let includeCache = {}; // {u
+let includeCache = {}; // {url: Runner}
+
+async function loadInclude(url, urlToken, context) {
+    if (includeCache[url]) return includeCache[url];
+
+    
