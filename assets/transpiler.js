@@ -174,4 +174,7 @@ let includeCache = {}; // {url: Runner}
 async function loadInclude(url, urlToken, context) {
     if (includeCache[url]) return includeCache[url];
 
-    
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", url, true);
+    ajax.send();
+    let wiretext = await new Promise(function(resolve,reje
