@@ -160,4 +160,13 @@ function indentsToBlocks(inTokens) {
                 indents.push(text);
                 outTokens.push({type: 'indent', range: token.range});
             }
-       
+        }
+        if (token.type !== 'line') {
+            outTokens.push(token);
+        }
+    }
+    return outTokens;
+}
+
+
+let includeCache = {}; // {u
