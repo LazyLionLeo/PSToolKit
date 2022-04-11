@@ -181,4 +181,7 @@ async function loadInclude(url, urlToken, context) {
         ajax.onload = function() {
             if (ajax.status === 200) {
                 resolve(ajax.responseText);
-     
+            } else {
+                reject(new ParseError(urlToken, `Couldn't load ${urlToken.text}: ${ajax.statusText}`));
+            }
+       
