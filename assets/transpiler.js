@@ -177,4 +177,8 @@ async function loadInclude(url, urlToken, context) {
     var ajax = new XMLHttpRequest();
     ajax.open("GET", url, true);
     ajax.send();
-    let wiretext = await new Promise(function(resolve,reje
+    let wiretext = await new Promise(function(resolve,reject) {
+        ajax.onload = function() {
+            if (ajax.status === 200) {
+                resolve(ajax.responseText);
+     
