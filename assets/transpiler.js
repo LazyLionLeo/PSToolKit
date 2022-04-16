@@ -200,4 +200,12 @@ export default async function textToDom(wiretext, parent, context, url) {
 
     delete includeCache[url];
 
-    let tokens = tokenize(wiretext,
+    let tokens = tokenize(wiretext, url);
+
+    let runner = new Runner(tokens, parent, context, url);
+    await runner.runFile();
+    return runner;
+}
+
+
+function setArg(
