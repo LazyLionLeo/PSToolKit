@@ -196,4 +196,8 @@ async function loadInclude(url, urlToken, context) {
 }
 
 
-export 
+export default async function textToDom(wiretext, parent, context, url) {
+
+    delete includeCache[url];
+
+    let tokens = tokenize(wiretext,
