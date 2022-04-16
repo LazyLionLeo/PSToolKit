@@ -184,4 +184,10 @@ async function loadInclude(url, urlToken, context) {
             } else {
                 reject(new ParseError(urlToken, `Couldn't load ${urlToken.text}: ${ajax.statusText}`));
             }
-       
+        }
+    });
+
+    let parent = document.createElement('div');    
+    let tokens = tokenize(wiretext, url);
+
+    let runner
