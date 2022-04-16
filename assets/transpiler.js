@@ -190,4 +190,10 @@ async function loadInclude(url, urlToken, context) {
     let parent = document.createElement('div');    
     let tokens = tokenize(wiretext, url);
 
-    let runner
+    let runner = new Runner(tokens, parent, context, url);
+    await runner.runFile();
+    return includeCache[url] = runner;
+}
+
+
+export 
