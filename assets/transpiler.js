@@ -208,4 +208,7 @@ export default async function textToDom(wiretext, parent, context, url) {
 }
 
 
-function setArg(
+function setArg(define, args, name, value, tag, token) {
+    if (!define) {
+        args[name] = value;
+    } else if (define.params.hasOwnProperty(name)) 
