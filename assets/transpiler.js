@@ -223,4 +223,7 @@ function setArg(define, args, name, value, tag, token) {
 
 
 class Runner {
-    constructor(toke
+    constructor(tokens, parent, context, currentUrl, tokenIndex=0, vars={}) {
+        this.tokens = tokens;
+        this.parent = parent;
+        this.context
