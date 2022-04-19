@@ -215,4 +215,12 @@ function setArg(define, args, name, value, tag, token) {
         args[define.params[name].jsName] = value;
     } else {
         if (define.spread == null) {
-            throw new ParseError(token, `Cu
+            throw new ParseError(token, `Custom element '${tag}' does not accept a '${name}' block`);
+        }
+        args[define.spread][name] = value;
+    }
+}
+
+
+class Runner {
+    constructor(toke
