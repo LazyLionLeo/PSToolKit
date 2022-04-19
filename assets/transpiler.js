@@ -226,4 +226,9 @@ class Runner {
     constructor(tokens, parent, context, currentUrl, tokenIndex=0, vars={}) {
         this.tokens = tokens;
         this.parent = parent;
-        this.context
+        this.context = context;
+        this.currentUrl = currentUrl;
+        this.tokenIndex = tokenIndex;
+        this.vars = vars;
+        this.options = [];
+   
