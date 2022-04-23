@@ -237,4 +237,8 @@ class Runner {
     async runFile() {
         await this.yieldWork();
         
-        while (this.tryCss() |
+        while (this.tryCss() || await this.tryStatement()) {};
+        this.require(this.matchType('eof'));
+
+        if (this.stylesheet) {
+            let styleE = docum
