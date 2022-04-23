@@ -231,4 +231,10 @@ class Runner {
         this.tokenIndex = tokenIndex;
         this.vars = vars;
         this.options = [];
-   
+        this.stylesheet = [];
+    }
+    
+    async runFile() {
+        await this.yieldWork();
+        
+        while (this.tryCss() |
