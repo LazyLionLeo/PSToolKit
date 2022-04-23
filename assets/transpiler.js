@@ -241,4 +241,6 @@ class Runner {
         this.require(this.matchType('eof'));
 
         if (this.stylesheet) {
-            let styleE = docum
+            let styleE = document.createElement('style');
+            styleE.innerHTML = this.stylesheet.join('');
+            // console.log(this.stylesheet.join(''))
