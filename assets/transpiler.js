@@ -243,4 +243,13 @@ class Runner {
         if (this.stylesheet) {
             let styleE = document.createElement('style');
             styleE.innerHTML = this.stylesheet.join('');
-            // console.log(this.stylesheet.join(''))
+            // console.log(this.stylesheet.join(''));
+            this.parent.appendChild(styleE);
+        }    
+    }
+
+    peek(offset=0) {
+        return this.tokens[this.tokenIndex + offset];
+    }
+
+    m
