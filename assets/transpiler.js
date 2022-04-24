@@ -263,4 +263,9 @@ class Runner {
     }
 
     matchType(type) {
-        let token = this.to
+        let token = this.tokens[this.tokenIndex];
+        if (token.type === type) {
+            this.options = [];
+            this.tokenIndex++;
+            return token;
+        
