@@ -256,4 +256,11 @@ class Runner {
         let token = this.tokens[this.tokenIndex];
         if (token.text === text) {
             this.options = [];
-            thi
+            this.tokenIndex++;
+            return token;
+        }
+        this.options.push(`'${text}'`);
+    }
+
+    matchType(type) {
+        let token = this.to
