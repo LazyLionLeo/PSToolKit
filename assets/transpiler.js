@@ -252,4 +252,8 @@ class Runner {
         return this.tokens[this.tokenIndex + offset];
     }
 
-    m
+    matchText(text) {
+        let token = this.tokens[this.tokenIndex];
+        if (token.text === text) {
+            this.options = [];
+            thi
