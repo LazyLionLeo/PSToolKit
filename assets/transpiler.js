@@ -274,4 +274,7 @@ class Runner {
 
     throwExpectedError() {
         let token = this.peek();
-        throw new ParseError(token, `Expec
+        throw new ParseError(token, `Expected ${this.options.join(' or ')} but got <${token.type}>${token.text===undefined ? '' : ` '${token.text}'`}`);
+    }
+
+    require(v
