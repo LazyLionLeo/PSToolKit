@@ -268,4 +268,10 @@ class Runner {
             this.options = [];
             this.tokenIndex++;
             return token;
-        
+        }
+        this.options.push(`<${type}>`);
+    }
+
+    throwExpectedError() {
+        let token = this.peek();
+        throw new ParseError(token, `Expec
