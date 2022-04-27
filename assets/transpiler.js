@@ -289,4 +289,10 @@ class Runner {
         let depth = 1;
         while(depth > 0) {
             if (this.matchType('dedent')) depth--;
-            else if (this.tokens[this.t
+            else if (this.tokens[this.tokenIndex++].type === 'indent') depth++;
+        }
+        return true;
+    }
+
+    trySkipStatementOrBlock() {
+        if (this.matchTyp
