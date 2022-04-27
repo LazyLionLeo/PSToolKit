@@ -277,4 +277,9 @@ class Runner {
         throw new ParseError(token, `Expected ${this.options.join(' or ')} but got <${token.type}>${token.text===undefined ? '' : ` '${token.text}'`}`);
     }
 
-    require(v
+    require(value) {
+        if (value !== undefined && value !== false) return value;
+        this.throwExpectedError();
+    }
+
+    trySkipBloc
