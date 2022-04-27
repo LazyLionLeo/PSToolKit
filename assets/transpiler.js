@@ -287,4 +287,6 @@ class Runner {
 
         // Read up until the matching dedent
         let depth = 1;
- 
+        while(depth > 0) {
+            if (this.matchType('dedent')) depth--;
+            else if (this.tokens[this.t
