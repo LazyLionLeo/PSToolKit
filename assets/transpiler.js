@@ -282,4 +282,9 @@ class Runner {
         this.throwExpectedError();
     }
 
-    trySkipBloc
+    trySkipBlock() {
+        if (!this.matchType('indent')) return false;
+
+        // Read up until the matching dedent
+        let depth = 1;
+ 
