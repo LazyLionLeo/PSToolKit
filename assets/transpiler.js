@@ -298,4 +298,11 @@ class Runner {
         if (this.matchType('eol')) {
             return this.trySkipBlock();
         } else {
-            while(!this.matchType('eol')) { this.token
+            while(!this.matchType('eol')) { this.tokenIndex++; }
+            this.trySkipBlock();
+            return true;
+        }
+    }
+
+    tryCaptureStatementOrBlock() {
+        // Returns Captured
