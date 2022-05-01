@@ -307,4 +307,5 @@ class Runner {
     tryCaptureStatementOrBlock() {
         // Returns Captured if a statement or a block of statements was found.
         let start = this.tokenIndex;
-        if (this.trySkipS
+        if (this.trySkipStatementOrBlock()) {
+            return new Captured(this.tokens, this.currentUrl, 'tryRunStatementOrBlock', start, this.tokenIndex, this
