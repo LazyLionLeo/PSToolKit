@@ -308,4 +308,10 @@ class Runner {
         // Returns Captured if a statement or a block of statements was found.
         let start = this.tokenIndex;
         if (this.trySkipStatementOrBlock()) {
-            return new Captured(this.tokens, this.currentUrl, 'tryRunStatementOrBlock', start, this.tokenIndex, this
+            return new Captured(this.tokens, this.currentUrl, 'tryRunStatementOrBlock', start, this.tokenIndex, this.vars);
+        }
+    }
+
+    async tryRunStatementOrBlock() {
+        if (this.matchType('eol')) {
+            return await this.tryBlock
