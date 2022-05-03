@@ -322,4 +322,7 @@ class Runner {
     }
 
     evalJs(js, token, thisObject) {
-        if (j
+        if (js.startsWith('{{{')) js = js.substr(3, js.length-6);
+        else js = `return (${js.substr(1, js.length-2)})`;
+        try {
+ 
