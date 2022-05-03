@@ -314,4 +314,12 @@ class Runner {
 
     async tryRunStatementOrBlock() {
         if (this.matchType('eol')) {
-            return await this.tryBlock
+            return await this.tryBlock();
+        }
+        else {
+            return await this.tryStatement();
+        }
+    }
+
+    evalJs(js, token, thisObject) {
+        if (j
