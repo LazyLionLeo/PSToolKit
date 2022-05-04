@@ -328,4 +328,7 @@ class Runner {
             return Function(...Object.keys(this.vars), js).apply(thisObject, Object.values(this.vars));
         }
         catch(e) {
-            
+            let varDump = [];
+            for(let key in this.vars) {
+                let val = this.vars[key];
+                if (val instanceof Captured) val =
