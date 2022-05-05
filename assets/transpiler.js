@@ -331,4 +331,8 @@ class Runner {
             let varDump = [];
             for(let key in this.vars) {
                 let val = this.vars[key];
-                if (val instanceof Captured) val =
+                if (val instanceof Captured) val = "<block>";
+                else val = JSON.stringify(val);
+                varDump.push(`${key}=${val}`)
+            }
+   
