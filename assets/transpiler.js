@@ -339,4 +339,8 @@ class Runner {
         }
     }
 
-    eva
+    evalString(str, token) {
+        if (str.startsWith('"""')) {
+            // Remove the quotes
+            str = str.substr(3, str.length-6)
+   
