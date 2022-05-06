@@ -335,4 +335,8 @@ class Runner {
                 else val = JSON.stringify(val);
                 varDump.push(`${key}=${val}`)
             }
-   
+            throw new ParseError(token, `${e.toString()}\nfor JavaScript: ${js}\nwith this.vars: ${varDump.join(' ')}\n`);
+        }
+    }
+
+    eva
