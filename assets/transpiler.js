@@ -345,4 +345,8 @@ class Runner {
             str = str.substr(3, str.length-6)
             // Remove first line if empty
             str = str.replace(/^\s*\n/, ''); 
-            // Remove whitespace prefix that is common to 
+            // Remove whitespace prefix that is common to all lines.
+            let lines = str.split('\n');
+            let prefix;
+            for(let line of lines) {
+                if (line.trim()) {
