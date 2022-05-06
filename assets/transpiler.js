@@ -343,4 +343,6 @@ class Runner {
         if (str.startsWith('"""')) {
             // Remove the quotes
             str = str.substr(3, str.length-6)
-   
+            // Remove first line if empty
+            str = str.replace(/^\s*\n/, ''); 
+            // Remove whitespace prefix that is common to 
