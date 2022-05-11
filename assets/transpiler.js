@@ -350,3 +350,5 @@ class Runner {
             let prefix;
             for(let line of lines) {
                 if (line.trim()) {
+                    let idx, commonLen = (prefix===undefined || line.length > prefix.length) ? line.length : prefix.length;
+                    for
