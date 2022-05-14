@@ -355,4 +355,8 @@ class Runner {
                         let char = line[idx];
                         if ((char != ' ' && char != '\t') || (prefix!==undefined && char != prefix[idx])) break;
                     }
-                    if (prefix===undefined || idx < prefix.le
+                    if (prefix===undefined || idx < prefix.length) prefix = line.substr(0, idx);
+                }
+            }
+            if (prefix) {
+                for(let idx=0; idx<lines.leng
