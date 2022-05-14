@@ -363,4 +363,10 @@ class Runner {
                     lines[idx] = lines[idx].substr(prefix.length);
                 }
             }
-            str = l
+            str = lines.join('\n');
+        } else {
+            str = str.substr(1, str.length-2);
+        }
+        let start;
+        let depth = 0;
+        fo
