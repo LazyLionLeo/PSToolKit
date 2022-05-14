@@ -353,4 +353,6 @@ class Runner {
                     let idx, commonLen = (prefix===undefined || line.length > prefix.length) ? line.length : prefix.length;
                     for(idx = 0; idx < commonLen; idx++) {
                         let char = line[idx];
-                        if ((char != ' ' && char != '\t') || (pr
+                        if ((char != ' ' && char != '\t') || (prefix!==undefined && char != prefix[idx])) break;
+                    }
+                    if (prefix===undefined || idx < prefix.le
