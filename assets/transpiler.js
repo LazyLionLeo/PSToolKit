@@ -359,4 +359,8 @@ class Runner {
                 }
             }
             if (prefix) {
-                for(let idx=0; idx<lines.leng
+                for(let idx=0; idx<lines.length; idx++) {
+                    lines[idx] = lines[idx].substr(prefix.length);
+                }
+            }
+            str = l
