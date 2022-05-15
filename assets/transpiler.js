@@ -379,4 +379,8 @@ class Runner {
                 }
             }
             else if (char==='{') {
-                if (!depth++) start 
+                if (!depth++) start = pos;
+            }
+            else if (char==='}') {
+                if (!--depth) {
+                    let js = str.substring(start
