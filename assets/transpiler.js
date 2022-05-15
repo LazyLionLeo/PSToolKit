@@ -375,4 +375,8 @@ class Runner {
                 let next = str[pos+1];
                 let out = STR_REPLACEMENTS[next];
                 if (out) {
-                    s
+                    str = str.substr(0, pos) + out + str.substr(pos+2);
+                }
+            }
+            else if (char==='{') {
+                if (!depth++) start 
