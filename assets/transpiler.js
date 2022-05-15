@@ -372,4 +372,7 @@ class Runner {
         for (let pos=0; pos<str.length; pos++) {
             let char = str[pos];
             if (char==='\\' && pos<str.length-1) {
-                let 
+                let next = str[pos+1];
+                let out = STR_REPLACEMENTS[next];
+                if (out) {
+                    s
