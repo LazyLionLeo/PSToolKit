@@ -369,4 +369,7 @@ class Runner {
         }
         let start;
         let depth = 0;
-        fo
+        for (let pos=0; pos<str.length; pos++) {
+            let char = str[pos];
+            if (char==='\\' && pos<str.length-1) {
+                let 
