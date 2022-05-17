@@ -383,4 +383,7 @@ class Runner {
             }
             else if (char==='}') {
                 if (!--depth) {
-                    let js = str.substring(start
+                    let js = str.substring(start, pos+1);
+                    let out = ""+this.evalJs(js, token);
+                    str = str.substr(0, start) + out + str.substr(pos+1);
+              
