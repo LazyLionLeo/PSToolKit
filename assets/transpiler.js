@@ -401,4 +401,8 @@ class Runner {
         else if (token = this.matchType('string')) {
             return this.evalString(token.text, token);
         }
-        else if (token = this.matchTy
+        else if (token = this.matchType('identifier')) {
+            return token.text;
+        }
+        else if (token = this.matchType('number')) {
+            return 0|t
