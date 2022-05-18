@@ -398,4 +398,7 @@ class Runner {
         if (token = this.matchType('js')) {
             return this.evalJs(token.text, token);
         }
-        else if (token = this.
+        else if (token = this.matchType('string')) {
+            return this.evalString(token.text, token);
+        }
+        else if (token = this.matchTy
