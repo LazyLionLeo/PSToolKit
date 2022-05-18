@@ -405,4 +405,12 @@ class Runner {
             return token.text;
         }
         else if (token = this.matchType('number')) {
-            return 0|t
+            return 0|token.text;
+        }
+        else {
+            this.throwExpectedError();
+        }
+    }
+
+    async tryStatement() {
+        return this.
