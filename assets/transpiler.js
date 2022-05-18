@@ -394,4 +394,8 @@ class Runner {
     }
 
     parseValue() {
-        le
+        let token;
+        if (token = this.matchType('js')) {
+            return this.evalJs(token.text, token);
+        }
+        else if (token = this.
