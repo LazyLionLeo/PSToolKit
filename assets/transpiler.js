@@ -413,4 +413,4 @@ class Runner {
     }
 
     async tryStatement() {
-        return this.
+        return this.matchType('eol') || this.tryDefine() || this.tryRun() || this.tryHtml() || (await this.tryInclude()) || (await this.
