@@ -417,4 +417,7 @@ class Runner {
     }
 
     tryDefine() {
-        if (
+        if (!this.matchText('define')) return false;
+
+        let nameToken = this.require(this.matchType('identifier'));
+        let name = na
