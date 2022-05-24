@@ -413,4 +413,8 @@ class Runner {
     }
 
     async tryStatement() {
-        return this.matchType('eol') || this.tryDefine() || this.tryRun() || this.tryHtml() || (await this.tryInclude()) || (await this.
+        return this.matchType('eol') || this.tryDefine() || this.tryRun() || this.tryHtml() || (await this.tryInclude()) || (await this.tryLiteral()) || (await this.tryIf()) || (await this.tryFor()) || (await this.tryNode());
+    }
+
+    tryDefine() {
+        if (
