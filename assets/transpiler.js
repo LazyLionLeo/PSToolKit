@@ -422,4 +422,10 @@ class Runner {
         let nameToken = this.require(this.matchType('identifier'));
         let name = nameToken.text;
         if (name[0].toUpperCase() !== name[0]) {
-            throw new ParseError(nameToken, "Custom element nam
+            throw new ParseError(nameToken, "Custom element names cannot start with a lower case letter");
+        }
+
+        let params = {};
+        let spread;
+
+        if (this.matchText('(')) { // the parameter
