@@ -420,4 +420,6 @@ class Runner {
         if (!this.matchText('define')) return false;
 
         let nameToken = this.require(this.matchType('identifier'));
-        let name = na
+        let name = nameToken.text;
+        if (name[0].toUpperCase() !== name[0]) {
+            throw new ParseError(nameToken, "Custom element nam
