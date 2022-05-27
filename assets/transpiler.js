@@ -428,4 +428,7 @@ class Runner {
         let params = {};
         let spread;
 
-        if (this.matchText('(')) { // the parameter
+        if (this.matchText('(')) { // the parameters
+            let paramToken = this.matchType('identifier');
+            if (paramToken) {
+                
