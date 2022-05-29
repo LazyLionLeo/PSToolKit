@@ -433,4 +433,6 @@ class Runner {
             if (paramToken) {
                 const addParam = jsName => {
                     if (jsName.substr(0,3)==='...') {
-                        jsName = jsName.substr(3
+                        jsName = jsName.substr(3);
+                        if (spread!=null) throw new ParseError(this.peek(-1), "Only a single spread parameter can be used");
+           
