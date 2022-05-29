@@ -431,4 +431,6 @@ class Runner {
         if (this.matchText('(')) { // the parameters
             let paramToken = this.matchType('identifier');
             if (paramToken) {
-                
+                const addParam = jsName => {
+                    if (jsName.substr(0,3)==='...') {
+                        jsName = jsName.substr(3
