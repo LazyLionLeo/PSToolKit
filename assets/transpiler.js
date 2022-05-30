@@ -437,4 +437,5 @@ class Runner {
                         if (spread!=null) throw new ParseError(this.peek(-1), "Only a single spread parameter can be used");
                         spread = true; // will be set to param name below
                     }                    
-                    i
+                    if (!jsName.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) throw new ParseError(this.peek(-1), `Parameter name '${jsName}' contains invalid characters`);
+    
