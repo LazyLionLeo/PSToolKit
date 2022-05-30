@@ -438,4 +438,8 @@ class Runner {
                         spread = true; // will be set to param name below
                     }                    
                     if (!jsName.match(/^[a-zA-Z_$][a-zA-Z0-9_$]*$/)) throw new ParseError(this.peek(-1), `Parameter name '${jsName}' contains invalid characters`);
-                    if (JS_KEYWORDS.has(jsName)) throw new ParseError(this.peek(-1), `JavaScript keyword '${jsName}' cannot be
+                    if (JS_KEYWORDS.has(jsName)) throw new ParseError(this.peek(-1), `JavaScript keyword '${jsName}' cannot be used as a parameter name`);
+
+                    let param = jsName;
+                    if (param.endsWith('_')) {
+                        param = para
