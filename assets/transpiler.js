@@ -444,4 +444,9 @@ class Runner {
                     if (param.endsWith('_')) {
                         param = param.substring(0, param.length-1);
                     }
-                    if (params.hasOwnProperty(param)) throw new ParseError(
+                    if (params.hasOwnProperty(param)) throw new ParseError(this.peek(-1), `Duplicate parameter '${param}'`);
+
+                    params[param] = {jsName};
+
+                    if (spread===true) {
+          
