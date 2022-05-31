@@ -449,4 +449,6 @@ class Runner {
                     params[param] = {jsName};
 
                     if (spread===true) {
-          
+                        spread = param;
+                    } else {
+                        if (this.matchText('=')) params[param].default = this.parseVal
