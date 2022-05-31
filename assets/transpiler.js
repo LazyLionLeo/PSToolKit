@@ -442,4 +442,6 @@ class Runner {
 
                     let param = jsName;
                     if (param.endsWith('_')) {
-                        param = para
+                        param = param.substring(0, param.length-1);
+                    }
+                    if (params.hasOwnProperty(param)) throw new ParseError(
