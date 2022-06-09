@@ -451,4 +451,9 @@ class Runner {
                     if (spread===true) {
                         spread = param;
                     } else {
-                        if (this.matchText('=')) params[param].default = this.parseVal
+                        if (this.matchText('=')) params[param].default = this.parseValue();
+                        else if (this.matchText('?')) params[param].default = '';
+                    }
+                };
+
+   
