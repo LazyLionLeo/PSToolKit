@@ -456,4 +456,7 @@ class Runner {
                     }
                 };
 
-   
+                let param = paramToken.text;
+                addParam(param);
+                while(this.matchText(",")) {
+        
