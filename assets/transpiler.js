@@ -468,4 +468,9 @@ class Runner {
 
         let def = this.vars[name] = this.require(this.tryCaptureStatementOrBlock());
         def.params = params;
-        
+        def.spread = spread;
+        return true;
+    }
+
+    async tryInclude() {
+        if (!this.matchText('include')) ret
