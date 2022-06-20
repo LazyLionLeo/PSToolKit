@@ -459,4 +459,8 @@ class Runner {
                 let param = paramToken.text;
                 addParam(param);
                 while(this.matchText(",")) {
-        
+                    param = this.require(this.matchType('identifier')).text;
+                    addParam(param);
+                }
+            }
+            this.req
