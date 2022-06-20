@@ -463,4 +463,9 @@ class Runner {
                     addParam(param);
                 }
             }
-            this.req
+            this.require(this.matchText(')'));
+        }
+
+        let def = this.vars[name] = this.require(this.tryCaptureStatementOrBlock());
+        def.params = params;
+        
