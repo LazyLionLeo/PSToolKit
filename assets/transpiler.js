@@ -473,4 +473,8 @@ class Runner {
     }
 
     async tryInclude() {
-        if (!this.matchText('include')) ret
+        if (!this.matchText('include')) return false;
+
+        let newUrl, nameToken = this.matchType('identifier');
+        if (nameToken) {
+            newUrl 
