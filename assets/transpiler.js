@@ -477,4 +477,9 @@ class Runner {
 
         let newUrl, nameToken = this.matchType('identifier');
         if (nameToken) {
-            newUrl 
+            newUrl = `templates/${nameToken.text}.wt`;
+        }
+        else {
+            nameToken = this.require(this.matchType('string'));
+
+            l
