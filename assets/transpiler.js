@@ -482,4 +482,6 @@ class Runner {
         else {
             nameToken = this.require(this.matchType('string'));
 
-            l
+            let name = this.evalString(nameToken.text, nameToken);
+            let idx = this.currentUrl.lastIndexOf('/');
+           
