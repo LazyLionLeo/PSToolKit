@@ -484,4 +484,8 @@ class Runner {
 
             let name = this.evalString(nameToken.text, nameToken);
             let idx = this.currentUrl.lastIndexOf('/');
-           
+            let base = idx>=0 ? this.currentUrl.substr(0, idx+1) : '';
+            newUrl = base + name;
+        }
+
+        let runner = await loadI
