@@ -488,4 +488,7 @@ class Runner {
             newUrl = base + name;
         }
 
-        let runner = await loadI
+        let runner = await loadInclude(newUrl, nameToken, this.context);
+
+        for(let child of runner.parent.children) {
+            this.parent.appendChild(child.cloneNo
