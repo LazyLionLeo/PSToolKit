@@ -491,4 +491,13 @@ class Runner {
         let runner = await loadInclude(newUrl, nameToken, this.context);
 
         for(let child of runner.parent.children) {
-            this.parent.appendChild(child.cloneNo
+            this.parent.appendChild(child.cloneNode(true));   
+        }
+
+        Object.assign(this.vars, runner.vars);
+
+        return true;
+    }
+
+    async tryIf() {
+        if (!t
