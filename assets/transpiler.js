@@ -500,4 +500,10 @@ class Runner {
     }
 
     async tryIf() {
-        if (!t
+        if (!this.matchText('if')) return false;
+
+        let ignoreRest = false;
+
+        while(true) {
+
+            let jsToken = 
