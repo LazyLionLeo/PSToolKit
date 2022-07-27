@@ -511,4 +511,9 @@ class Runner {
 
             if (condition===true) {
                 this.require(await this.tryRunStatementOrBlock());
-                
+                ignoreRest = true;
+            } else {
+                this.require(await this.trySkipStatementOrBlock());
+            }
+
+  
