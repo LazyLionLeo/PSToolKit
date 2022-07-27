@@ -535,4 +535,8 @@ class Runner {
     async tryFor() {
         if (!this.matchText('for')) return false;
 
-        let varName = this.require(this.matchType('identi
+        let varName = this.require(this.matchType('identifier')).text;
+
+        this.require(this.matchText('in'));
+
+        let jsToken = this.require(this.matchType('js'));
