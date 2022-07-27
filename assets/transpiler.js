@@ -507,4 +507,8 @@ class Runner {
         while(true) {
 
             let jsToken = this.require(this.matchType('js'));
-            let condition = ignoreRest ? undefined : !!this.evalJs(jsToken.text, jsToken)
+            let condition = ignoreRest ? undefined : !!this.evalJs(jsToken.text, jsToken);
+
+            if (condition===true) {
+                this.require(await this.tryRunStatementOrBlock());
+                
