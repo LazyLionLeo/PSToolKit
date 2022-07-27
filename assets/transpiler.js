@@ -545,4 +545,7 @@ class Runner {
         let block = this.require(this.tryCaptureStatementOrBlock());
 
         for(let item of items) {
-   
+            await this.yieldWork();
+            await block.run(this.parent, this.context, {[varName]: item});
+        }
+        retu
