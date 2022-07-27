@@ -520,4 +520,8 @@ class Runner {
                 if (this.matchText('if')) {
                     continue;
                 }
-    
+                if (condition===false) {
+                    this.require(await this.tryRunStatementOrBlock());
+                }
+                else {
+  
