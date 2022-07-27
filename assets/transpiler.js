@@ -540,3 +540,9 @@ class Runner {
         this.require(this.matchText('in'));
 
         let jsToken = this.require(this.matchType('js'));
+        let items = this.evalJs(jsToken.text, jsToken);
+
+        let block = this.require(this.tryCaptureStatementOrBlock());
+
+        for(let item of items) {
+   
