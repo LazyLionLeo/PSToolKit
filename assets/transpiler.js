@@ -529,4 +529,10 @@ class Runner {
             }
             break;
         }
-        re
+        return true;
+    }
+
+    async tryFor() {
+        if (!this.matchText('for')) return false;
+
+        let varName = this.require(this.matchType('identi
