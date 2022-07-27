@@ -524,4 +524,9 @@ class Runner {
                     this.require(await this.tryRunStatementOrBlock());
                 }
                 else {
-  
+                    this.require(await this.trySkipStatementOrBlock());
+                }
+            }
+            break;
+        }
+        re
