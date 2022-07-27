@@ -516,4 +516,8 @@ class Runner {
                 this.require(await this.trySkipStatementOrBlock());
             }
 
-  
+            if (this.matchText('else')) {
+                if (this.matchText('if')) {
+                    continue;
+                }
+    
