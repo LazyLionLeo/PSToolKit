@@ -572,4 +572,11 @@ class Runner {
         return selector.join(' ');
     }
 
-    t
+    tryCss() {
+        if (!this.matchText('css')) return false;
+        this.runCssRules('');
+        return true;
+    }
+
+    runCssRules(prefix) {
+    
