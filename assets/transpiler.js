@@ -563,3 +563,5 @@ class Runner {
     }
 
     runSelector() {
+        let selector = [];
+        while(this.peek().type !== 'indent' && this.peek().type !== 'eol' && this.peek(1).text !== '=')
