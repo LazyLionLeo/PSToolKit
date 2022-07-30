@@ -585,4 +585,8 @@ class Runner {
         let rules = '';
 
         while(true) {
-            if (this.matchType('eo
+            if (this.matchType('eol')) break;
+            let prop = this.parseValue();
+            this.require(this.matchText('='));
+            let value = this.parseValue();
+      
