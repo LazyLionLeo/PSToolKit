@@ -566,4 +566,10 @@ class Runner {
         let selector = [];
         while(this.peek().type !== 'indent' && this.peek().type !== 'eol' && this.peek(1).text !== '=') {
             let strToken = this.matchType('string');
-            if (strToken) selector.push(this.evalString(strToken.text, strTok
+            if (strToken) selector.push(this.evalString(strToken.text, strToken));
+            else selector.push(this.tokens[this.tokenIndex++].text);
+        }
+        return selector.join(' ');
+    }
+
+    t
