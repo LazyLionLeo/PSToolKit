@@ -589,4 +589,9 @@ class Runner {
             let prop = this.parseValue();
             this.require(this.matchText('='));
             let value = this.parseValue();
-      
+            rules += `\t${prop}: ${value};\n`;
+        }
+
+        if (this.matchType('indent')) {
+            while(true) {
+            
