@@ -548,4 +548,11 @@ class Runner {
             await this.yieldWork();
             await block.run(this.parent, this.context, {[varName]: item});
         }
-        retu
+        return true;
+    }
+
+    tryRun() {
+        if (!this.matchText('run')) return false;
+
+        let jsToken = this.require(this.matchType('js'));
+   
