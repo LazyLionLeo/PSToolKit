@@ -555,4 +555,11 @@ class Runner {
         if (!this.matchText('run')) return false;
 
         let jsToken = this.require(this.matchType('js'));
-   
+        this.require(this.matchType('eol'));
+
+        this.evalJs(jsToken.text, jsToken, this.parent);
+
+        return true;
+    }
+
+    runSelector() {
