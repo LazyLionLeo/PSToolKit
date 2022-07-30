@@ -564,4 +564,6 @@ class Runner {
 
     runSelector() {
         let selector = [];
-        while(this.peek().type !== 'indent' && this.peek().type !== 'eol' && this.peek(1).text !== '=')
+        while(this.peek().type !== 'indent' && this.peek().type !== 'eol' && this.peek(1).text !== '=') {
+            let strToken = this.matchType('string');
+            if (strToken) selector.push(this.evalString(strToken.text, strTok
