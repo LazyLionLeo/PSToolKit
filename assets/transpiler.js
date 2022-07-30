@@ -579,4 +579,10 @@ class Runner {
     }
 
     runCssRules(prefix) {
-    
+        let selectorToken = this.peek();
+        let selector = prefix + this.runSelector();
+
+        let rules = '';
+
+        while(true) {
+            if (this.matchType('eo
