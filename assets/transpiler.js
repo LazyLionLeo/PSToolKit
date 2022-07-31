@@ -612,3 +612,9 @@ class Runner {
 
         if (rules) {
             if (selector==='') throw new ParseError(selectorToken, "CSS selector expected")
+            this.stylesheet.push(`${selector} {\n${rules}}\n`);
+        }
+    }
+
+    tryHtml() {
+        if (!this.matchText('html'))
