@@ -620,4 +620,9 @@ class Runner {
         if (!this.matchText('html')) return false;
         let htmlToken = this.tokens[this.tokenIndex];
         let html = this.parseValue();
-        this.require(this.matchType('eol')
+        this.require(this.matchType('eol'));
+
+        let topE = document.createElement('div');
+        topE.innerHTML = html;
+        this.parent.appendChild(topE);
+        htmlToken.lastElement = to
