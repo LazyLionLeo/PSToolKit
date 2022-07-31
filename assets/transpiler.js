@@ -625,4 +625,10 @@ class Runner {
         let topE = document.createElement('div');
         topE.innerHTML = html;
         this.parent.appendChild(topE);
-        htmlToken.lastElement = to
+        htmlToken.lastElement = topE;
+        return true;
+    }
+
+    async tryLiteral() {
+        let stringToken = this.matchType("string");
+        if (stringToken)
