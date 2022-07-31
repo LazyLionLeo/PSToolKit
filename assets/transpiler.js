@@ -597,4 +597,7 @@ class Runner {
                 if (this.matchType('dedent')) break;
 
                 if (this.peek(1).text === '=') {
-                    let prop = this.parseValue
+                    let prop = this.parseValue();
+                    this.require(this.matchText('='));
+                    let value = this.parseValue();
+                    this
