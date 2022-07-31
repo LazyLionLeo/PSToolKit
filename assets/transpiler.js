@@ -617,4 +617,7 @@ class Runner {
     }
 
     tryHtml() {
-        if (!this.matchText('html'))
+        if (!this.matchText('html')) return false;
+        let htmlToken = this.tokens[this.tokenIndex];
+        let html = this.parseValue();
+        this.require(this.matchType('eol')
