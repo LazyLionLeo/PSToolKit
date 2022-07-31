@@ -604,4 +604,7 @@ class Runner {
                     rules += `\t${prop}: ${value};\n`;
                 }
                 else {
-                 
+                    if (this.matchText('&')) this.runCssRules(selector);
+                    else this.runCssRules(selector+" ");
+                }
+   
