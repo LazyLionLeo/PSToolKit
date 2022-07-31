@@ -600,4 +600,8 @@ class Runner {
                     let prop = this.parseValue();
                     this.require(this.matchText('='));
                     let value = this.parseValue();
-                    this
+                    this.require(this.matchType('eol'));
+                    rules += `\t${prop}: ${value};\n`;
+                }
+                else {
+                 
