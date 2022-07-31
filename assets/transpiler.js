@@ -607,4 +607,8 @@ class Runner {
                     if (this.matchText('&')) this.runCssRules(selector);
                     else this.runCssRules(selector+" ");
                 }
-   
+            }
+        }
+
+        if (rules) {
+            if (selector==='') throw new ParseError(selectorToken, "CSS selector expected")
