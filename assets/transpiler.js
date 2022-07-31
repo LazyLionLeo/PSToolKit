@@ -594,4 +594,7 @@ class Runner {
 
         if (this.matchType('indent')) {
             while(true) {
-            
+                if (this.matchType('dedent')) break;
+
+                if (this.peek(1).text === '=') {
+                    let prop = this.parseValue
