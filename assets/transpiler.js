@@ -631,4 +631,7 @@ class Runner {
 
     async tryLiteral() {
         let stringToken = this.matchType("string");
-        if (stringToken)
+        if (stringToken) {
+            let el = document.createTextNode(this.evalString(stringToken.text, stringToken));
+            this.parent.appendChild(el);
+      
