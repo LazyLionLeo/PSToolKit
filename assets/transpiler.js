@@ -639,3 +639,7 @@ class Runner {
         }
 
         let jsToken = this.matchType("js");
+        if (jsToken) {
+            let result = this.evalJs(jsToken.text, jsToken);
+            if (result instanceof Captured) {
+ 
