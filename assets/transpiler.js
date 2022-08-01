@@ -642,4 +642,6 @@ class Runner {
         if (jsToken) {
             let result = this.evalJs(jsToken.text, jsToken);
             if (result instanceof Captured) {
+                await result.run(this.parent, this.context, undefined, jsToken);
+                jsToken.lastElement = this.parent.lastChild;
  
