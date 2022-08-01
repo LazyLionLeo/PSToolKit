@@ -634,4 +634,8 @@ class Runner {
         if (stringToken) {
             let el = document.createTextNode(this.evalString(stringToken.text, stringToken));
             this.parent.appendChild(el);
-      
+            this.require(this.matchType('eol'));
+            return true;
+        }
+
+        let jsToken = this.matchType("js");
