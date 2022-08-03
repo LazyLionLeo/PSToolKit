@@ -647,4 +647,10 @@ class Runner {
             }
             else if (result!=null) {
                 let el = document.createTextNode(result);
-            
+                this.parent.appendChild(el);
+            }
+            this.require(this.matchType('eol'));
+            return true;
+        }
+
+    
