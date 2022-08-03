@@ -644,4 +644,7 @@ class Runner {
             if (result instanceof Captured) {
                 await result.run(this.parent, this.context, undefined, jsToken);
                 jsToken.lastElement = this.parent.lastChild;
- 
+            }
+            else if (result!=null) {
+                let el = document.createTextNode(result);
+            
