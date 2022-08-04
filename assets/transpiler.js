@@ -669,4 +669,7 @@ class Runner {
         }
         
         let define = (tag[0] !== tag[0].toLowerCase()) ? (this.vars[tag] || false) : undefined;
-        if (define===false) throw new ParseError(th
+        if (define===false) throw new ParseError(this.peek(-1), `No such custom element '${tag}'`);
+
+        // Attributes
+        if (define && define.spread != null) args[define.spread] = {};
