@@ -659,3 +659,9 @@ class Runner {
     async tryNode() {
         let tagToken = this.matchType('identifier');
         if (!tagToken) return false;
+
+        let args = {};
+
+        let tagClasses = tagToken.text.split('.');
+        let tag = tagClasses[0] || 'div';
+        if 
