@@ -653,4 +653,9 @@ class Runner {
             return true;
         }
 
-    
+        return false;
+    }
+
+    async tryNode() {
+        let tagToken = this.matchType('identifier');
+        if (!tagToken) return false;
