@@ -676,4 +676,7 @@ class Runner {
         while(true) {
             let nameToken = this.matchType('identifier');
             if (!nameToken) break;
-            if (nameToken.tex
+            if (nameToken.text==='...') {
+                // The spread operator
+                let jsToken = this.require(this.matchType('js'));
+                let argsObj = this
