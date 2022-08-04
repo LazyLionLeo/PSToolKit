@@ -673,3 +673,7 @@ class Runner {
 
         // Attributes
         if (define && define.spread != null) args[define.spread] = {};
+        while(true) {
+            let nameToken = this.matchType('identifier');
+            if (!nameToken) break;
+            if (nameToken.tex
