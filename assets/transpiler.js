@@ -664,4 +664,8 @@ class Runner {
 
         let tagClasses = tagToken.text.split('.');
         let tag = tagClasses[0] || 'div';
-        if 
+        if (tagClasses.length>1) {
+            args.class = tagClasses.slice(1).join(' ');
+        }
+        
+        let defin
