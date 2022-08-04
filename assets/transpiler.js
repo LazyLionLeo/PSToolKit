@@ -668,4 +668,5 @@ class Runner {
             args.class = tagClasses.slice(1).join(' ');
         }
         
-        let defin
+        let define = (tag[0] !== tag[0].toLowerCase()) ? (this.vars[tag] || false) : undefined;
+        if (define===false) throw new ParseError(th
