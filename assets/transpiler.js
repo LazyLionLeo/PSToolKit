@@ -682,4 +682,8 @@ class Runner {
                 let argsObj = this.evalJs(jsToken.text, jsToken);
                 if (typeof argsObj !== 'object' || !argsObj) throw new ParseError(jsToken, `Spread operator this.requires JavaScript to return an object`);
                 for(let k in argsObj) {
-                   
+                    setArg(define, args, k, argsObj[k], tag, jsToken);
+                }
+            }
+            else {
+                if (!this.matchText(
