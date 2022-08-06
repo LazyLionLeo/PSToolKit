@@ -688,4 +688,8 @@ class Runner {
             else {
                 if (!this.matchText('=')) {
                     // Backtrack one token. This looks like it's a 'content' statement.
-                 
+                    this.tokenIndex--;
+                    break;
+                }
+                setArg(define, args, nameToken.text, this.parseValue(), tag, nameToken);
+ 
