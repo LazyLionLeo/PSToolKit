@@ -680,4 +680,6 @@ class Runner {
                 // The spread operator
                 let jsToken = this.require(this.matchType('js'));
                 let argsObj = this.evalJs(jsToken.text, jsToken);
-                if (typeof argsObj !== 'object' || !argsObj) throw new ParseError(jsToken,
+                if (typeof argsObj !== 'object' || !argsObj) throw new ParseError(jsToken, `Spread operator this.requires JavaScript to return an object`);
+                for(let k in argsObj) {
+                   
