@@ -679,4 +679,5 @@ class Runner {
             if (nameToken.text==='...') {
                 // The spread operator
                 let jsToken = this.require(this.matchType('js'));
-                let argsObj = this
+                let argsObj = this.evalJs(jsToken.text, jsToken);
+                if (typeof argsObj !== 'object' || !argsObj) throw new ParseError(jsToken,
