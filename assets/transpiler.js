@@ -692,4 +692,10 @@ class Runner {
                     break;
                 }
                 setArg(define, args, nameToken.text, this.parseValue(), tag, nameToken);
- 
+            }
+        }
+
+        if (define) {
+            // A custom element.
+
+            if (this.peek().type === 'eol' && this.pee
