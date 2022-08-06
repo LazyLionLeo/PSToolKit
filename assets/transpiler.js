@@ -698,4 +698,6 @@ class Runner {
         if (define) {
             // A custom element.
 
-            if (this.peek().type === 'eol' && this.pee
+            if (this.peek().type === 'eol' && this.peek(1).type === 'indent' && this.peek(2).type === 'identifier' && this.peek(3).text === '=') {
+                // Parse a list of named content blocks.
+         
