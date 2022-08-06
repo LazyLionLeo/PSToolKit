@@ -686,4 +686,6 @@ class Runner {
                 }
             }
             else {
-                if (!this.matchText(
+                if (!this.matchText('=')) {
+                    // Backtrack one token. This looks like it's a 'content' statement.
+                 
