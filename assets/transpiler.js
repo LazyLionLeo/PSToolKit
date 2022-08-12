@@ -700,4 +700,8 @@ class Runner {
 
             if (this.peek().type === 'eol' && this.peek(1).type === 'indent' && this.peek(2).type === 'identifier' && this.peek(3).text === '=') {
                 // Parse a list of named content blocks.
-         
+                this.require(this.matchType('eol'));
+                this.require(this.matchType('indent'));
+
+                while(true) {
+     
