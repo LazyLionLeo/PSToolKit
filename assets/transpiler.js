@@ -704,4 +704,6 @@ class Runner {
                 this.require(this.matchType('indent'));
 
                 while(true) {
-     
+                    let nameToken = this.matchType('identifier');
+                    if (!nameToken) break;
+                    this.requ
