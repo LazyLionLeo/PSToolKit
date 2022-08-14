@@ -706,4 +706,6 @@ class Runner {
                 while(true) {
                     let nameToken = this.matchType('identifier');
                     if (!nameToken) break;
-                    this.requ
+                    this.require(this.matchText('='));
+                    let value = this.require(this.tryCaptureStatementOrBlock());
+                    setArg(define, a
