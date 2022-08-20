@@ -708,4 +708,8 @@ class Runner {
                     if (!nameToken) break;
                     this.require(this.matchText('='));
                     let value = this.require(this.tryCaptureStatementOrBlock());
-                    setArg(define, a
+                    setArg(define, args, nameToken.text, value, tag, nameToken);
+                }
+
+                this.require(this.matchType('dedent'));
+      
