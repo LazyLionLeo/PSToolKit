@@ -712,4 +712,8 @@ class Runner {
                 }
 
                 this.require(this.matchType('dedent'));
-      
+            }
+            else {
+                let captured = this.tryCaptureStatementOrBlock();
+                if (captured) {
+            
