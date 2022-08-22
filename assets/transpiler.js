@@ -718,3 +718,10 @@ class Runner {
                 if (captured) {
                     // A single 'content' block (or line)
                     setArg(define, args, 'content', captured, tag, tagToken);
+                }
+                else {
+                    this.matchType('eol');
+                }
+            }
+
+            // Cop
