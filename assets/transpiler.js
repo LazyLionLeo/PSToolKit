@@ -716,4 +716,5 @@ class Runner {
             else {
                 let captured = this.tryCaptureStatementOrBlock();
                 if (captured) {
-            
+                    // A single 'content' block (or line)
+                    setArg(define, args, 'content', captured, tag, tagToken);
