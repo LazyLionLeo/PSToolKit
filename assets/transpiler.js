@@ -724,4 +724,6 @@ class Runner {
                 }
             }
 
-            // Cop
+            // Copy in default arguments, and check if all this.required parameters have been provided.
+            for(let param in define.params) {
+                let
