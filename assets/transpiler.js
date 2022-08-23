@@ -726,4 +726,7 @@ class Runner {
 
             // Copy in default arguments, and check if all this.required parameters have been provided.
             for(let param in define.params) {
-                let
+                let info = define.params[param];
+                if (!args.hasOwnProperty(info.jsName)) {
+                    if (info.hasOwnProperty('default')) {
+       
