@@ -729,4 +729,6 @@ class Runner {
                 let info = define.params[param];
                 if (!args.hasOwnProperty(info.jsName)) {
                     if (info.hasOwnProperty('default')) {
-       
+                        args[info.jsName] = info.default;
+                    } else {
+                        throw new ParseError(this.peek(), `Custo
