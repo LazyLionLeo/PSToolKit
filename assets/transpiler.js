@@ -736,4 +736,8 @@ class Runner {
                 }
             }
 
-            let runner =
+            let runner = await define.run(this.parent, this.context, args, tagToken);
+            tagToken.lastElement = this.parent.lastChild;
+        }
+        else {
+  
