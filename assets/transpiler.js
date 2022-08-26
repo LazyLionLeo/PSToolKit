@@ -740,4 +740,5 @@ class Runner {
             tagToken.lastElement = this.parent.lastChild;
         }
         else {
-  
+            // A DOM element
+            let el = args.xmlns ? document.createElementNS(args.xmlns, tag) : document.crea
