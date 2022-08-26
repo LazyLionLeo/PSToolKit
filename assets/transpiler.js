@@ -752,4 +752,9 @@ class Runner {
             this.parent = el;
             try {
                 await this.tryRunStatementOrBlock();
-            } f
+            } finally {
+                this.parent = oldParent;
+            }
+
+            this.parent.appendChild(el);
+     
