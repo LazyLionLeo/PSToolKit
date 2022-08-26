@@ -748,4 +748,8 @@ class Runner {
                 else el.setAttribute(key, value);
             }
 
-            let oldParent 
+            let oldParent = this.parent;
+            this.parent = el;
+            try {
+                await this.tryRunStatementOrBlock();
+            } f
