@@ -731,4 +731,9 @@ class Runner {
                     if (info.hasOwnProperty('default')) {
                         args[info.jsName] = info.default;
                     } else {
-                        throw new ParseError(this.peek(), `Custo
+                        throw new ParseError(this.peek(), `Custom element '${tag}' expects a '${param}' attribute`)
+                    }
+                }
+            }
+
+            let runner =
