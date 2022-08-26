@@ -744,4 +744,8 @@ class Runner {
             let el = args.xmlns ? document.createElementNS(args.xmlns, tag) : document.createElement(tag)
             for(let key in args) {
                 let value = args[key];
-                if (typeof value === 'function' || typeof
+                if (typeof value === 'function' || typeof value === 'boolean') el[key] = value;
+                else el.setAttribute(key, value);
+            }
+
+            let oldParent 
