@@ -741,4 +741,7 @@ class Runner {
         }
         else {
             // A DOM element
-            let el = args.xmlns ? document.createElementNS(args.xmlns, tag) : document.crea
+            let el = args.xmlns ? document.createElementNS(args.xmlns, tag) : document.createElement(tag)
+            for(let key in args) {
+                let value = args[key];
+                if (typeof value === 'function' || typeof
