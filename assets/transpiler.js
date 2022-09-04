@@ -757,4 +757,12 @@ class Runner {
             }
 
             this.parent.appendChild(el);
-     
+            tagToken.lastElement = el;
+        }
+        
+        return true;
+    }
+
+    async yieldWork() {
+        // Yield every 10ms
+ 
