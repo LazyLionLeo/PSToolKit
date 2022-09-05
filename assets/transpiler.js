@@ -765,4 +765,6 @@ class Runner {
 
     async yieldWork() {
         // Yield every 10ms
- 
+        let time = +new Date();
+        if (!this.context.lastYieldTime) this.context.lastYieldTime = time;
+        if (time > this.contex
