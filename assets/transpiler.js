@@ -770,4 +770,9 @@ class Runner {
         if (time > this.context.lastYieldTime + 10) {
             this.context.lastYieldTime = time;
             await new Promise(function(resolve){
-    
+                setTimeout(resolve,0);
+            });
+            if (this.context.cancelled) {
+                throw new ParseCancelled();
+            }
+     
