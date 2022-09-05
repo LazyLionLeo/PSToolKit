@@ -767,4 +767,7 @@ class Runner {
         // Yield every 10ms
         let time = +new Date();
         if (!this.context.lastYieldTime) this.context.lastYieldTime = time;
-        if (time > this.contex
+        if (time > this.context.lastYieldTime + 10) {
+            this.context.lastYieldTime = time;
+            await new Promise(function(resolve){
+    
