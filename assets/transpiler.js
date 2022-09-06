@@ -775,4 +775,11 @@ class Runner {
             if (this.context.cancelled) {
                 throw new ParseCancelled();
             }
-     
+        }
+    }
+
+
+    async tryBlock() {
+        if (!this.matchType('indent')) return false;
+        await this.yieldWork();
+        while (a
