@@ -782,4 +782,10 @@ class Runner {
     async tryBlock() {
         if (!this.matchType('indent')) return false;
         await this.yieldWork();
-        while (a
+        while (await this.tryStatement()) {}
+        this.require(this.matchType('dedent'));
+        return true;
+    }
+
+    scrollTo(line, column) {
+     
