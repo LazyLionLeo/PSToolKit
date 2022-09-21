@@ -794,3 +794,7 @@ class Runner {
 
         let first=0;
         let last=this.tokens.length;
+        while(first<last) {
+            let mid = (first+last)>>1;
+            let midRange = this.tokens[mid].range;
+            if 
