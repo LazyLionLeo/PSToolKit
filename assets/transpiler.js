@@ -788,4 +788,9 @@ class Runner {
     }
 
     scrollTo(line, column) {
-     
+        function isBefore(l1,c1, l2,c2) {
+            return l1 < l2 || (l1==l2 && c1<c2);
+        }
+
+        let first=0;
+        let last=this.tokens.length;
