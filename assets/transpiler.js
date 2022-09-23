@@ -797,4 +797,7 @@ class Runner {
         while(first<last) {
             let mid = (first+last)>>1;
             let midRange = this.tokens[mid].range;
-            if 
+            if (isBefore(midRange.startLine,midRange.startColumn, line,column)) {
+                first = mid+1;
+            } else {
+              
