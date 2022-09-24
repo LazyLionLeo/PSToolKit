@@ -800,4 +800,11 @@ class Runner {
             if (isBefore(midRange.startLine,midRange.startColumn, line,column)) {
                 first = mid+1;
             } else {
-              
+                last = mid;
+            }
+        }
+        first--;
+
+        while(first >= 0) {
+            let element = this.tokens[first].lastElement;
+         
