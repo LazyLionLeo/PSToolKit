@@ -813,4 +813,9 @@ class Runner {
                 }
                 element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
                 return;
-        
+            }
+            first--;
+        }
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+}
