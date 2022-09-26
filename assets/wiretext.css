@@ -9,4 +9,9 @@ body {
     background-color: #eee;
     min-height: 100%;
     user-select: none;
-    background-color
+    background-color: white;
+    color: black;
+}
+
+body, input, textarea {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
