@@ -807,4 +807,7 @@ class Runner {
 
         while(first >= 0) {
             let element = this.tokens[first].lastElement;
-         
+            if (element) {
+                while (!element.offsetParent) { // display: none
+                    element = element.parentNode;
+          
