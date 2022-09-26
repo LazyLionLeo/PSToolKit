@@ -810,4 +810,7 @@ class Runner {
             if (element) {
                 while (!element.offsetParent) { // display: none
                     element = element.parentNode;
-          
+                }
+                element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+                return;
+        
