@@ -3,4 +3,10 @@ html {
 }
 
 body {
-    display: 
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    min-height: 100%;
+    user-select: none;
+    background-color
