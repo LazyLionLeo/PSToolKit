@@ -21,4 +21,13 @@ body > .screens {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    
+    margin: 4vw;
+    gap: 4vw;
+    overflow: hidden;
+}
+
+body > .error {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
