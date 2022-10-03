@@ -31,3 +31,12 @@ body > .error {
     right: 0;
     top: 0;
     z-index: 3;
+    background-color: #a12;
+    color: white;
+    padding: 4px 8px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+body > .error:empty {
+    di
