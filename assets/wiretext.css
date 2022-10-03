@@ -39,4 +39,9 @@ body > .error {
 }
 
 body > .error:empty {
-    di
+    display: none;
+}
+
+code {
+    color: black;
+}
