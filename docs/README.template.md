@@ -7,4 +7,6 @@ WireText is a text format that allows you to rapidly create low fidelity user in
 Features:
 
 - A HTML/CSS templating language (inspired by PugJS) with a very lean syntax.
-- A library of common user-interface components, using a hand-drawn style 
+- A library of common user-interface components, using a hand-drawn style so that nobody mistakes your wireframes for polished layout mockups.
+- As-you-type previews and error feedback.
+- Automatic scrol
