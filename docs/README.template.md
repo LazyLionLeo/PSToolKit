@@ -13,4 +13,4 @@ Features:
 
 # Installation
 
-WireText is not offered in the VSCode market place yet. You can install it by do
+WireText is not offered in the VSCode market place yet. You can install it by downloading [this file](./wiretext-1.1.0.vsix) and installing it in VSCode by clicking `···` in the top-right of the *extensions* panel, and then 
