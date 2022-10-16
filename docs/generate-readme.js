@@ -74,3 +74,55 @@ textToDom(${wiretext}, document.body, [false], ${JSON.stringify(wiretextFile)});
 
     let tmpFile = "generate-readme.tmp.html";
     fs.writeFileSync(tmpFile, html);
+
+    await driver.get(`file://${BASE_DIR}/${tmpFile}`);
+
+    for(let index = 0; index < parts.length; index++) {
+        let part = parts[index];
+
+        let screenshot, width, filename = `docs/${++imagecount}.png`;
+        if (part.show) {
+            let element = await driver.findElement(By.id(`part${index}`));
+            await driver.executeScript("arguments[0].scrollIntoView(true);", element);
+            // await driver.sleep(500);
+            screenshot = await element.takeScreenshot();
+            width = (await element.getRect()).width;
+        }
+
+        output += `${part.text.replace(/</g, '&lt;')}\n\n`;
+        if (part.show) {
+            fs.writeFileSync(filename, screenshot, 'base64');
+            output += `<img src="${filename}"${width < 350 ? ' align="right"' : ''}>\n\n`;
+        }
+        output += `\`\`\`wiretext\n${part.wiretext}\`\`\`\n\n`;
+        output += `\n<br clear="right">\n\n`;
+    }
+
+    await driver.quit();
+
+    fs.unlinkSync(tmpFile)
+    return output;
+}
+
+async function run() {
+    let readme = fs.readFileSync('docs/README.template.md').toString();
+
+    let output = "";
+    let startIndex = readme.indexOf("{{{");
+    while (startIndex !== -1) {
+      output += readme.substring(0, startIndex);
+      readme = readme.substring(startIndex + 3);
+      let endIndex = readme.indexOf("}}}");
+
+      let filename = readme.substring(0, endIndex);
+      output += await wiretextToMarkdown(`${BASE_DIR}/${filename}`);
+
+      readme = readme.substring(endIndex + 3);
+      startIndex = readme.indexOf("{{{");
+    }
+    output += readme;
+
+    fs.writeFileSync('README.md', output);
+}
+
+run();
