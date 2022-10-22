@@ -4,4 +4,10 @@ include components-v1
 # used to link to it from other screens.
 
 Phone id=login title="Welcome to Thingies"
-	Input label=Email value="test@example.
+	Input label=Email value="test@example.com"
+	Input label=Password value=123456 type=password
+	Button content="Sign in" link=home
+
+# Screens will often have some associated notes.
+
+Phone id=login
