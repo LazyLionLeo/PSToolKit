@@ -10,4 +10,7 @@ Phone id=login title="Welcome to Thingies"
 
 # Screens will often have some associated notes.
 
-Phone id=login
+Phone id=login title="Welcome to Thingies" notes="""
+	These are the notes for this screen.
+	- Notes are written in *Markdown*.
+	- They can be used to describe **be
