@@ -13,4 +13,7 @@ Phone id=login title="Welcome to Thingies"
 Phone id=login title="Welcome to Thingies" notes="""
 	These are the notes for this screen.
 	- Notes are written in *Markdown*.
-	- They can be used to describe **be
+	- They can be used to describe **behavior** associated with the screen.
+"""
+	Input label=Email value="test@example.com"
+	Input label=Password value=123456 type
