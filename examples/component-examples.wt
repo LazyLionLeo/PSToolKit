@@ -1,3 +1,7 @@
 include components-v1
 
-# A Phone is a type of screen. It must have an 
+# A Phone is a type of screen. It must have an id, which can be 
+# used to link to it from other screens.
+
+Phone id=login title="Welcome to Thingies"
+	Input label=Email value="test@example.
