@@ -16,4 +16,10 @@ Phone id=login title="Welcome to Thingies" notes="""
 	- They can be used to describe **behavior** associated with the screen.
 """
 	Input label=Email value="test@example.com"
-	Input label=Password value=123456 type
+	Input label=Password value=123456 type=password
+	Button content="Sign in" link=home
+
+
+
+# Let's define a template layout for a logged in view of our app,
+#
