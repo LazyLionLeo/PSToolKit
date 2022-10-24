@@ -22,4 +22,6 @@ Phone id=login title="Welcome to Thingies" notes="""
 
 
 # Let's define a template layout for a logged in view of our app,
-#
+# that'll we be able to reuse for most of our screens.
+# Icons are provided by Remix Icons. You can look the names up
+# here: https://r
