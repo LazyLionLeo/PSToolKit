@@ -33,4 +33,7 @@ define LoggedInPhone(id,title,content,up?)
 			Icon icon=user link=profiled
 		panel =
 			Button link=home content="Home" icon=home
-			Button link=favs conte
+			Button link=favs content="Favourites" icon=heart
+			Button link=about content="About" icon=info
+			hr
+			Button content="Nederlands" i
