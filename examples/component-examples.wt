@@ -29,4 +29,8 @@ Phone id=login title="Welcome to Thingies" notes="""
 define LoggedInPhone(id,title,content,up?)
 	Phone id={id} title={title} up={up} content={content}
 		bar_right =
-			Icon 
+			Icon icon=settings link=settings
+			Icon icon=user link=profiled
+		panel =
+			Button link=home content="Home" icon=home
+			Button link=favs conte
