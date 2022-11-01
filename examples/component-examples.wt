@@ -40,4 +40,9 @@ define LoggedInPhone(id,title,content,up?)
 			Button content="English" icon=flag
 			Button content="Deutsch" icon=flag
 
-# Use this template to create a p
+# Use this template to create a page with an empty list and an add button.
+
+LoggedInPhone id=home title="Home"
+	ActionButton link="add"
+		RemixIcon icon=add
+	.wt-empty-page "No items"
