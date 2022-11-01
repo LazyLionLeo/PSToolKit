@@ -46,3 +46,9 @@ LoggedInPhone id=home title="Home"
 	ActionButton link="add"
 		RemixIcon icon=add
 	.wt-empty-page "No items"
+
+# A screen with some tabs and a view inputs.
+	
+LoggedInPhone id=add title="Add an item" up=home
+	Tabs
+		Tab title=Movie s
