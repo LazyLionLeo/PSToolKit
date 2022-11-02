@@ -62,4 +62,8 @@ LoggedInPhone id=add title="Add an item" up=home
 # A populated list.
 
 LoggedInPhone id=home_populated title="Home" 
-	ActionButton link="
+	ActionButton link="add"
+		RemixIcon icon=add
+	List
+		ListItem text="Fight Club" subtext="Movie, 1999" thumbnail=image
+		ListItem text=Memento subte
