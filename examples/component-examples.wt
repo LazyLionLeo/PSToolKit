@@ -55,4 +55,11 @@ LoggedInPhone id=add title="Add an item" up=home
 			Input label=Title value=Memento
 			Input label="Release year" value=2000
 			Button link=home_populated content=Add
-	
+		Tab title=Song
+		Tab title=Book
+		Tab title="..."
+
+# A populated list.
+
+LoggedInPhone id=home_populated title="Home" 
+	ActionButton link="
