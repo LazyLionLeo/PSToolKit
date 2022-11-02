@@ -51,4 +51,8 @@ LoggedInPhone id=home title="Home"
 	
 LoggedInPhone id=add title="Add an item" up=home
 	Tabs
-		Tab title=Movie s
+		Tab title=Movie selected={true}
+			Input label=Title value=Memento
+			Input label="Release year" value=2000
+			Button link=home_populated content=Add
+	
