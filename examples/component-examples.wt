@@ -66,4 +66,5 @@ LoggedInPhone id=home_populated title="Home"
 		RemixIcon icon=add
 	List
 		ListItem text="Fight Club" subtext="Movie, 1999" thumbnail=image
-		ListItem text=Memento subte
+		ListItem text=Memento subtext="Movie, 2000" thumbnail="https://tinyurl.com/2p87xwuj" link=edit_thing
+		ListItem text="The Matrix" subtext="Movie, 1999" thumb
