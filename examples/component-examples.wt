@@ -83,4 +83,8 @@ LoggedInPhone id=edit_thing title="Memento" up=home
 		RadioButton label=Book name=thing_type
 		RadioButton label=Other name=thing_type
 
-	T
+	TextArea label=Synopsis value="""
+		A man with short-term memory loss attempts to track
+		down his wife's murderer."""
+	
+	S
