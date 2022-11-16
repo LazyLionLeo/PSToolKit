@@ -79,4 +79,8 @@ LoggedInPhone id=edit_thing title="Memento" up=home
 		CheckBox label=Owned checked=true
 	
 	FieldSet legend="Thingy type"
-		Ra
+		RadioButton label=Movie name=thing_type checked={true}
+		RadioButton label=Book name=thing_type
+		RadioButton label=Other name=thing_type
+
+	T
