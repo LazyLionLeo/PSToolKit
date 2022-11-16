@@ -72,4 +72,11 @@ LoggedInPhone id=home_populated title="Home"
 # Some more input elements, and columns.
 
 LoggedInPhone id=edit_thing title="Memento" up=home
-	img src="https://tinyu
+	img src="https://tinyurl.com/2p87xwuj"
+
+	.wt-columns
+		CheckBox label=Favourite
+		CheckBox label=Owned checked=true
+	
+	FieldSet legend="Thingy type"
+		Ra
