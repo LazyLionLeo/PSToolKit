@@ -87,4 +87,9 @@ LoggedInPhone id=edit_thing title="Memento" up=home
 		A man with short-term memory loss attempts to track
 		down his wife's murderer."""
 	
-	S
+	Select label=Rating options="All | PG-13 | PG-16"
+
+	Button content=Save link=home_populated
+
+# Insert some html formatting.
+
