@@ -93,3 +93,6 @@ LoggedInPhone id=edit_thing title="Memento" up=home
 
 # Insert some html formatting.
 
+LoggedInPhone id=about title="About..." up=home
+	html """
+	Lorem ipsum dolor sit <strong>amet</strong>, consectetur adipiscing elit, sed
