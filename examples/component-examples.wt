@@ -95,4 +95,5 @@ LoggedInPhone id=edit_thing title="Memento" up=home
 
 LoggedInPhone id=about title="About..." up=home
 	html """
-	Lorem ipsum dolor sit <strong>amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst quisque sagittis purus sit amet volutpat consequat. In
+	Lorem ipsum dolor sit <strong>amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Integer feugiat scelerisque varius morbi enim nunc faucibus.
+	<em>Quis auctor</em> elit sed vulputate mi sit amet mauris. Tincidunt 
