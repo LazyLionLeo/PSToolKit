@@ -105,4 +105,5 @@ LoggedInPhone id=about title="About..." up=home
 
 # The Computer template.
 
-Computer
+Computer id=wintest title=Test notes="""
+The name of the last-opened file is stored, and if the file still exists when the application starts again, it should aut
