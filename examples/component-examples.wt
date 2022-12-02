@@ -112,4 +112,8 @@ The name of the last-opened file is stored, and if the file still exists when th
 		MenuCategory category="File"
 			Button icon=file content=Load
 			Button icon=save content=Save
-			
+			Button icon=close content=Exit
+		MenuCategory category="Edit"
+		MenuCategory category="Tools"
+		MenuCategory category="Help"
+	.
