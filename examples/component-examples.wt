@@ -119,4 +119,4 @@ The name of the last-opened file is stored, and if the file still exists when th
 	.wt-empty-page "Start by opening a file..."
 
 # Expect more components in the future. Please let us know what you're missing 
-# as a Git
+# as a GitHub issue: https://gitlab.com/saxion.nl/42/wiretext-code/-/issues

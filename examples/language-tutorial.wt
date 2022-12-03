@@ -1,0 +1,11 @@
+
+# The WireText language is an HTML templating language (inspired by PugJS).
+
+# The following will create a <section> containing an <h3> with some text
+# and a <ul> with two list items (the second one being a link):
+
+section
+	h3
+		"Title text"
+	ul
+		li

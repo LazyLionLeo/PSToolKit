@@ -1,0 +1,2 @@
+define IncludeHello
+	p.intro "Hello from language-tutorial-include.wt!!"
