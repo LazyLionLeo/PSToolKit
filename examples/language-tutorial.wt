@@ -9,3 +9,130 @@ section
 		"Title text"
 	ul
 		li
+			"Item one."
+		li
+			a
+				"Item two."
+		# This is a comment.
+
+# When the content block for an element has only one item, it can be added
+# to the same line, like this:
+
+section
+	h3 "Title text"
+	ul
+		li "Item one."
+		li a "Item two."
+
+# HTML attributes can be provided using key=value pairs immediately after the
+# tag name. Keys and values that contain 'strange' characters need to be
+# "quoted" as a string.
+
+section class=intro
+	h3 id=my_title style="color: red;" "Title text"
+	ul
+		li "Item one."
+		li a target=_blank href="https://example.com/two" "Item two."
+
+# As the class attribute is quite common, there's a shortcut for setting it:
+
+section.intro "Intro"
+
+section.intro.summary "Intro summary"
+
+# When the tag name is left out, 'div' is assumed:
+
+.some_class "I'm a <DIV>"
+
+# Multi-line strings are supported using """triple double quotes""":
+
+pre style="""
+  background-color: #222;
+  color: #fde;
+""" title="Shell script"
+	"""
+	  #!/bin/sh
+	  files=`ls ~ | wc -l`
+	  echo You have $files files in your home directory.
+	"""
+
+# For styling, we recommend the use of CSS instead of 'style' attributes.
+# WireText offers a convenient syntax for defining CSS inline:
+
+css
+	.special
+		background-color="#cce"
+		padding="8px"
+	.special > h3
+		color=red
+	.special li a
+		color=green
+
+section class=special
+	h3 id=my_title "Title text"
+	ul
+		li "Item one."
+		li a target=_blank href="https://example.com/two" "Item two."
+
+# CSS selectors can be nested, and property=value pairs can optionally be
+# put on the same line as the selector, allowing the above CSS to be written
+# like this:
+
+css .special background-color="#eee" padding="8px"
+	> h3 color=red
+	li a color=green
+
+# WireText allows you to define reusable components. Component names must
+# start with a Capital Letter.
+
+define YourName
+	fieldset
+		legend "Who are you?"
+		input placeholder="First name"
+		input placeholder="Last name"
+
+# To show a component, you can use its name as if it were an HTML tag:
+
+YourName
+
+.special
+	YourName
+
+# Components can have parameters, defined between (parenthesis) after
+# the tag name. They must be provided when instantiating the component
+# the same way that HTML attributes are provided.
+# They can be used in most contexts (including within strings) by
+# surrounding their names with {curly brackets}.
+
+define AnyName(title, pronoun)
+	fieldset
+		legend {title}
+		input placeholder="{pronoun} first name"
+		input placeholder="{pronoun} last name"
+
+AnyName title="Who is the king of pop?" pronoun=His
+AnyName title="Who am I?" pronoun=My
+
+# Parameters are required, unless they get a default value, provided
+# by a '=' and the value after the definition.
+
+define AnyName(title = "Who are you?", pronoun = Your)
+	fieldset
+		legend {title}
+		input placeholder="{pronoun} first name"
+		input placeholder="{pronoun} last name"
+
+AnyName
+AnyName pronoun=Thy
+
+# Expression between {curly brackets} cannot just be parameter names,
+# but are actually JavaScript expressions, in a context where all
+# parameters have been defined as local variables
+
+define AnyName(title = "Who are you?", pronoun = Your)
+	fieldset
+		legend {title.toUpperCase()}
+		input placeholder="{pronoun.replace(/o/, '😁')} first name"
+		input placeholder="{pronoun} last name"
+
+AnyName
