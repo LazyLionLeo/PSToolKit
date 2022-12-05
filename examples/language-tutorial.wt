@@ -136,3 +136,120 @@ define AnyName(title = "Who are you?", pronoun = Your)
 		input placeholder="{pronoun} last name"
 
 AnyName
+
+# Component attributes names must be valid JavaScript variable names.
+# In case you want to use a JavaScript keyword, such as `class` or
+# `in`m as an attribute, you can suffix it with and underscore in 
+# the definition and in your JavaScript expressions.
+
+define InClass(class_, in_)
+	input value={in_} class={class_}
+
+InClass in=test class=intro
+
+# WireText supports the spread operator, to receive all attributes
+# that have not been defined as parameters into an object. This
+# object can be passed expanded to attributes for a DOM element 
+# or another component.
+
+define SpreadComponent(a, b, ...rest)
+	p "a = {a}"
+	p "b = {b}"
+	p "rest has {Object.keys(rest).length} properties"
+	input ...rest
+
+SpreadComponent a=Almond b=Banana style="color: red;" value="My input value" type=password
+
+# WireText offers if/else if/else blocks, where the condition is
+# provided by a JavaScript expression. Also note how the '?' suffix
+# in the parameter list can be used for optional parameters
+# (defaulting to an empty string).
+
+define AnyName(title = "Who are you?", checkbox?)
+	fieldset
+		legend {title}
+		input placeholder="First name"
+		input placeholder="Last name"
+		if {checkbox}
+			label
+				input type=checkbox
+				{checkbox}
+
+AnyName
+AnyName checkbox="I agree!"
+
+# Similarly, there are for blocks.
+
+for person in {"he she Frank".split(" ")}
+	AnyName title="Who is {person}?"
+
+# JavaScript can also be used in event handlers, allowing you to hack
+# a little bit of interactivity into your wireframes.
+# NOTE: Expect this feature to change at any time. I'm not really happy
+# with it yet.
+
+button onclick={e => e.target.innerText += "!"} "Hello"
+
+# You may also run a bit of JavaScript while your page is initially
+# constructed using a run statement. Its `this` variable will refer
+# to the parent DOM element.
+# NOTE: Expect this feature to change at any time. I'm not really happy
+# with it yet.
+
+css .angry color=red text-transform=uppercase font-weight=bold
+section
+	"Test"
+	run {setInterval(() => this.classList.toggle('angry'), 500)}
+
+# (Multi-line) JavaScript containing {curly brackets} can be wrapped
+# in {{{triple curly brackets}}}. While in {regular form} only a
+# single JavaScript expression is expected, which will be used as
+# a value by WireText, {{{triple form}}} doesn't deliver a value
+# by default, but you can `return` one if you want.
+
+section
+	"Test"
+	run {{{
+		let element = this;
+		function toggleAngry() {
+			element.classList.toggle('angry');
+		}
+		setInterval(toggleAngry, 500);
+	}}}
+
+# Components can also receive a block of WireText as a parameter.
+# The default block (which resembles the content of a DOM element)
+# is called 'content'.
+
+define FancyFrame(content)
+	div style="border: 4px solid #c0c;"
+		div style="border: 4px solid #0cc;"
+			div style="border: 4px solid #cc0; padding: 4px;"
+				{content}
+
+FancyFrame
+	"Type something: "
+	input
+
+FancyFrame "test"
+
+# You can also pass multiple blocks as parameters, or pass a block
+# to a parameter not named 'content' using this form:
+
+css header display=flex background-color="#ccc" align-items=center
+	> h3 flex=1 text-align=center
+
+define TitleBar(title, left, right)
+	header
+		.left {left}
+		h3 {title}
+		.right {right}
+
+TitleBar title="Hello world!"
+	left=
+		a href="#" "Go back"
+	right=
+		input type=checkbox
+		"Dark mode"
+
+FancyFrame
