@@ -253,3 +253,23 @@ TitleBar title="Hello world!"
 		"Dark mode"
 
 FancyFrame
+	content = select
+		option "moon"
+		option "mars"
+
+# WireText allows you to include files. The path should be given
+# as a string and relative to the path of the current file.
+
+include "language-tutorial-include.wt"
+IncludeHello
+
+# WireText standard libraries (currently only `components-v1`)
+# can be included by giving the name as an identifier:
+
+include components-v1
+Phone id=test title="My app" up=home
+	content=
+		Input label=Name
+		CheckBox label="Sure!"
+	bar_right=
+		 RemixIcon icon=settings
