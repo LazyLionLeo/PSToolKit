@@ -131,3 +131,21 @@ function getWebviewContent(assetsPath) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WireText Preview</title>
+	<base href="${assetsPath}/">
+    <link rel="stylesheet" href="wiretext.css">
+  </head>
+  <body>
+  	<script src="marked.min.js"></script>
+    <script src="browser.js" type="module"></script>
+  </body>
+</html>
+`
+}
+
+function deactivate() {}
+
+module.exports = {
+	activate,
+	deactivate
+};
