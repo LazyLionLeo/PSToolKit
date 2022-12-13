@@ -8,4 +8,8 @@
     ],
     "autoClosingPairs": [
         { "open": "{", "close": "}" },
-        { "o
+        { "open": "(", "close": ")" },
+        { "open": "\"", "close": "\"", "notIn": ["string"] }
+    ],
+    "autoCloseBefore": ";:.,=}])>` \n\t",
+    
