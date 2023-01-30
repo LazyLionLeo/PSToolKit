@@ -2,4 +2,7 @@
   "name": "wiretext",
   "displayName": "WireText",
   "description": "Live preview for WireText text-based wireframing.",
-  "
+  "version": "1.1.0",
+  "repository": "https://gitlab.com/saxion.nl/42/wiretext-code",
+  "engines": {
+    "vscode": 
