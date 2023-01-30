@@ -5,4 +5,12 @@
   "version": "1.1.0",
   "repository": "https://gitlab.com/saxion.nl/42/wiretext-code",
   "engines": {
-    "vscode": 
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:wiretext.preview"
+  ],
+  "main": "./extension.js
