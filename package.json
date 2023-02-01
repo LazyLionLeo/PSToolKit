@@ -13,4 +13,10 @@
   "activationEvents": [
     "onCommand:wiretext.preview"
   ],
-  "main": "./extension.js
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "wiretext.preview",
+        "title": "Preview WireText"
+      }
