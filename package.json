@@ -20,3 +20,13 @@
         "command": "wiretext.preview",
         "title": "Preview WireText"
       }
+    ],
+    "languages": [
+      {
+        "id": "wiretext",
+        "extensions": [
+          ".wt"
+        ],
+        "aliases": [
+          "WireText",
+   
