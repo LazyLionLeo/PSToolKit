@@ -29,4 +29,11 @@
         ],
         "aliases": [
           "WireText",
-   
+          "wt"
+        ],
+        "filenames": [],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+    
