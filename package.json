@@ -39,4 +39,11 @@
       {
         "language": "wiretext",
         "scopeName": "source.wiretext",
-        "path": "./syntaxes/wiretext.tmGrammar.j
+        "path": "./syntaxes/wiretext.tmGrammar.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.javascript": "javascript"
+        }
+      }
+    ]
+  },
+  "scripts":
