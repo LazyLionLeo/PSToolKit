@@ -1,0 +1,4 @@
+{
+    "scopeName": "source.wiretext",
+    "patterns": [{ "include": "#global" }],
+ 
