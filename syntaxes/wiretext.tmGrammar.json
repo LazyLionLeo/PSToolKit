@@ -1,4 +1,6 @@
 {
     "scopeName": "source.wiretext",
     "patterns": [{ "include": "#global" }],
- 
+    "repository": {
+      "global": {
+        "patterns": [{ "include": "#comment" }, { "include": "#keyword" }, { "include": "#className" 
