@@ -3,4 +3,4 @@
     "patterns": [{ "include": "#global" }],
     "repository": {
       "global": {
-        "patterns": [{ "include": "#comment" }, { "include": "#keyword" }, { "include": "#className" 
+        "patterns": [{ "include": "#comment" }, { "include": "#keyword" }, { "include": "#className" }, { "include": "#identifier" }, {"include": "#longstring"}, {"include": "#string"}, {"include": "#longjavascript"}, {"inclu
