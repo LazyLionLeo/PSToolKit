@@ -3,4 +3,8 @@
     "patterns": [{ "include": "#global" }],
     "repository": {
       "global": {
-        "patterns": [{ "include": "#comment" }, { "include": "#keyword" }, { "include": "#className" }, { "include": "#identifier" }, {"include": "#longstring"}, {"include": "#string"}, {"include": "#longjavascript"}, {"inclu
+        "patterns": [{ "include": "#comment" }, { "include": "#keyword" }, { "include": "#className" }, { "include": "#identifier" }, {"include": "#longstring"}, {"include": "#string"}, {"include": "#longjavascript"}, {"include": "#javascript"}, {"include": "#assign"}, {"include": "#operator"}]
+      },
+      "comment": {
+        "begin": "#",
+        "end":
