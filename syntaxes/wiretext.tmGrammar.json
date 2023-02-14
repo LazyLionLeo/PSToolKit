@@ -7,4 +7,8 @@
       },
       "comment": {
         "begin": "#",
-        "end":
+        "end": "$",
+        "name": "comment.line"
+      },
+      "keyword": {
+        "match": "(if|else|include|css|run|html|define|
