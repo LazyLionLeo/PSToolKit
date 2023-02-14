@@ -11,4 +11,9 @@
         "name": "comment.line"
       },
       "keyword": {
-        "match": "(if|else|include|css|run|html|define|
+        "match": "(if|else|include|css|run|html|define|for|in)\\b",
+        "name": "keyword.control"
+      },
+      "className": {
+        "match": "[A-Z][a-zA-Z0-9_:.-]*",
+     
