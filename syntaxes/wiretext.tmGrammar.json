@@ -22,4 +22,8 @@
         "match": "[a-z_.][a-zA-Z0-9_:.-]*",
         "name": "variable.other"
       },
-      "
+      "longstring": {
+        "name": "string.quoted",
+        "begin": "\"\"\"",
+        "beginCaptures": {
+            "0"
