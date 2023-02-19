@@ -26,4 +26,10 @@
         "name": "string.quoted",
         "begin": "\"\"\"",
         "beginCaptures": {
-            "0"
+            "0": {
+                "name": "punctuation.definition.string.begin"
+            }
+        },
+        "end": "\"\"\"",
+        "endCaptures": {
+     
