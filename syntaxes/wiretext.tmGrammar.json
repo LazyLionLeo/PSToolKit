@@ -38,3 +38,10 @@
         },
         "patterns": [
             {
+                "include": "#javascript"
+            }
+        ]
+      },
+      "string": {
+        "name": "string.quoted",
+        "begi
