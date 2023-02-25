@@ -44,4 +44,7 @@
       },
       "string": {
         "name": "string.quoted",
-        "begi
+        "begin": "\"",
+        "beginCaptures": {
+            "0": {
+                "name": "punctuation.definition.string.begin"
