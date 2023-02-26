@@ -48,3 +48,9 @@
         "beginCaptures": {
             "0": {
                 "name": "punctuation.definition.string.begin"
+            }
+        },
+        "end": "(\")|((?:[^\\\\\\n])$)",
+        "endCaptures": {
+            "1": {
+                "name": "punctuation.defi
