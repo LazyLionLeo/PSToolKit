@@ -66,4 +66,7 @@
         ]
       },
       "longjavascript": {
-        "name"
+        "name": "string.interpolated",
+        "contentName": "meta.embedded.block.javascript",
+        "begin": "{{{",
+        "end": "}}}"
