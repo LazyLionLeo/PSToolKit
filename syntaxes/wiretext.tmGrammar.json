@@ -53,4 +53,10 @@
         "end": "(\")|((?:[^\\\\\\n])$)",
         "endCaptures": {
             "1": {
-                "name": "punctuation.defi
+                "name": "punctuation.definition.string.end"
+            },
+            "2": {
+                "name": "invalid.illegal.newline"
+            }
+        },
+        "patterns
