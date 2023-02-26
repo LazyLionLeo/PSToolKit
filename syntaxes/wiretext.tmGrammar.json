@@ -59,4 +59,11 @@
                 "name": "invalid.illegal.newline"
             }
         },
-        "patterns
+        "patterns": [
+            {
+                "include": "#javascript"
+            }
+        ]
+      },
+      "longjavascript": {
+        "name"
