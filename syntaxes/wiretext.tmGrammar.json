@@ -82,4 +82,9 @@
       "assign": {
         "match": "(=)\\s*([A-Za-z_0-9][a-zA-Z0-9_:-]*)",
         "captures": {
-            "1": {"name": "punctuation.definit
+            "1": {"name": "punctuation.definition"},
+            "2": {"name": "string.unquoted"}
+        }
+      },
+      "operator": {
+        "match": "[*/=<>!%
