@@ -69,4 +69,9 @@
         "name": "string.interpolated",
         "contentName": "meta.embedded.block.javascript",
         "begin": "{{{",
-        "end": "}}}"
+        "end": "}}}",
+        "patterns": [ {"include": "source.js"} ]
+      },
+      "javascript": {
+        "name": "string.interpolated",
+        "contentNam
