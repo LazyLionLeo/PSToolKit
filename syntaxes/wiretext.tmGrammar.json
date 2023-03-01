@@ -74,4 +74,9 @@
       },
       "javascript": {
         "name": "string.interpolated",
-        "contentNam
+        "contentName": "meta.embedded.block.javascript",
+        "begin": "{",
+        "end": "}",
+        "patterns": [ {"include": "source.js"} ]
+      },
+ 
